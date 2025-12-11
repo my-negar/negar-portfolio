@@ -1,29 +1,86 @@
-.item{
-    border: solid 1px ;
-border-radius: 40px;
-display: inline-block;
-cursor: pointer;
-border-color: rgb(177, 173, 173);
+.item {
+    border: solid 1px;
+    border-radius: 50px;
+    display: inline-block;
+    cursor: pointer;
+    border-color: rgb(177, 173, 173);
+    padding: 25px;
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: rgb(253, 255, 161);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
 
-.item-zerro{
-border: solid 1px ;
-border-radius: 40px;
-display: inline-block;
-padding-left: 20px;
-padding-right: 20px;
-border-color: rgb(177, 173, 173);
+.item:hover {
+    background-color: rgb(252, 251, 210);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.input{
-    border: solid 1px ;
-border-radius: 40px;
-border-color: rgb(177, 173, 173);
- 
+.item:active{
+    background-color: rgb(216, 214, 214);
+    opacity: 0.7;
+    transition: 0.1s;
 }
 
-body{
-   
-   
+.item-zerro {
+    border: solid 1px;
+    border-radius: 40px;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-color: rgb(177, 173, 173);
+    background-color: rgb(253, 255, 161);
+    padding: 25px;
+    padding-left: 65px;
+    padding-right:60px;
+    margin-top: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.item-zerro:hover {
+    background-color: rgb(252, 251, 210);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item-zerro:active{
+    background-color: rgb(216, 214, 214);
+    opacity: 0.7;
+    transition: 0.1s;
+}
+
+.input {
+    border: solid 1px;
+    border-radius: 40px;
+    border-color: rgb(177, 173, 173);
+    padding: 20px;
+    width: 225px;
+    display: block;
+    justify-content: end;
+    background-color: white;
+    font-size: 23px;
+
+}
+
+body {
+    background-color:#000000; 
+}
+
+.container{
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    transform:  translateY(16%);
+    border: solid 1px;
+    border-radius: 40px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 20px;
+    background-color: #8c418f;
+    box-shadow: 3px 6px 7px rgba(0, 0, 0, 0.5);
+
 }
