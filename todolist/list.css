@@ -18,7 +18,7 @@ display: inline-block;
 margin-left: 35px;
 flex: 1;
 min-width: 0;
-max-width: 500px;
+max-width: 900px;
 margin-right: 10px;
 }
 
@@ -56,11 +56,16 @@ transition: 0.1s;
 
 .div-two{
    border: solid 1px;
-   border-color: rgb(187, 187, 187);
+   border-color: rgb(150, 150, 150);
    margin-top: 15px;
    padding: 200px;
+   padding-bottom: 270px;
    margin-left: 20px;
    margin-right: 20px;
-   max-width: 520px;
+   max-width: 900px;
 }
 
+.completed{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
