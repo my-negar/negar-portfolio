@@ -6,7 +6,7 @@ const Nav =()=>{
 return(
    <div className="navbar navbar-dark bg-dark navbar-expand-lg">
     <div className="container">
-        <a className="navbar-brand">SarvinStyle Codding</a>
+        <a className="navbar-brand">My Little Shop</a>
         <ul className="navbar-nav">
             <li className="nav-item">
                 <Link to={"/"} className="nav-link">Shop</Link>

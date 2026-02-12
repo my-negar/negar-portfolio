@@ -1,69 +1,63 @@
 import images from "../assets/images (1).jpg"
-import images from "../assets/images (2).jpg"
-import images from "../assets/images.jpg"
-import images from "../assets/images (3).jpg"
-import images from "../assets/images (4).jpg"
-import images from "../assets/images (5).jpg"
-import images from "../assets/AUOBG9PsZAETBv1g.jpg"
-import images from "../assets/1734863757-Y7aT0llxyxlYLJ6L.webp"
-import images from "../assets/long-t-shirt-for-girls-17.jpg"
-
+import imagess from "../assets/images (2).jpg"
+import imagees from "../assets/images.jpg"
+import imagges from "../assets/images (5).jpg"
+import imaages from "../assets/images (4).jpg"
+import immages from "../assets/74N6CIg5alnzriVE0tZXHx7gVYlpwfz36TW7lt02kn5RVRCeky.jpg_512X512X70.jpg"
+import iimages from "../assets/AUOBG9PsZAETBv1g.jpg"
+import image from "../assets/1734863757-Y7aT0llxyxlYLJ6L.webp"
 
 
 export const PRODUCTS =[ 
    
     {
         id : 1 ,
-        productName : "images",
+        productName : "کت و شلوار",
         price : 998000 ,
-        productImage : "کت و شلوار"
+        productImage : images
     },
      {
         id : 2 ,
-        productName : "images",
+        productName : "کت و شلوار ",
         price : 988000 ,
-        productImage : "کت و شلوار"
+        productImage : imagess
     },
       {
         id : 3 ,
-        productName : "images",
+        productName :  " کت و شلوار ",
         price : 1100000 ,
-        productImage : "کت و شلوار"
+        productImage : imagees
     },
      {
         id : 4 ,
-        productName : "images",
-        price : 500000 ,
-        productImage : "کراپ تاپ"
+        productName :  " ست بگ",
+        price : 1100000 ,
+        productImage : imagges
     },
+    
      {
         id : 5 ,
-        productName : "images",
+        productName : "ست بگ",
         price : 100000 ,
-        productImage : "تیشرت و شلوار بگ"
+        productImage : imaages
     },
-     {
+       {
         id : 6 ,
-        productName : "images",
-        price : 1400000 ,
-        productImage : "تیشرت و شلوار بگ"
+        productName : "کراپ هودی",
+        price : 998000 ,
+        productImage : immages
     },
      {
         id : 7 ,
-        productName : "images",
+        productName : "هودی  زنانه ",
         price : 750000 ,
-        productImage : "هودی زنانه بیسیک"
+        productImage : iimages
     },
      {
         id : 8 ,
-        productName : "images",
+        productName : "هودی زنانه",
         price : 868000 ,
-        productImage : "هودی زنانه"
+        productImage : image
     },
- {
-        id : 9 ,
-        productName : "images",
-        price : 670000 ,
-        productImage : "تیشرت بگ"
-    },
+ 
 ]
