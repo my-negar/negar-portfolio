@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Shop from './pages/shop/shop.jsx';
 import Cart from './page/cart/cart';
 import Nav from './componennt/nav';
-import { ShopContextProvider } from "./context/shopContext"
+import { ShopContextProvider } from "./context/shopContext.js"
 
 function App() {
   return (
