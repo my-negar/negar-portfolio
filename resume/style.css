@@ -102,8 +102,14 @@ a{
   font-weight:bold;
 }
 
-@media(max-width:768px){
+@media(max-width : 768px){
   .container{
-    grid-template-columns:1fr;
+    flex-direction: row;
+  }
+  .sidebar{
+    width: 35%;
+  }
+  .main{
+    width: 65%;
   }
 }
