@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #080653, #825dac);
+
+}
+
+.h1 {
+  margin-bottom: 26px;
+
+}
+
+.input {
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  padding-left: 15px;
+  padding-right: 85px;
+  padding-top: 10px;
+  padding-bottom: 7px;
+}
+
+.a {
+  color: blue;
+}
+
+.a:hover {
+  color: rgb(16, 16, 129);
+}
+
+.a:hover {
+  opacity: 0.5;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  margin-top: 25px;
+  margin-left: 100px;
+  background-color: #0051ff;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #03297c;
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.input label {
+  position: absolute;
+  left: 10px;
+  top: 22px;
+  background: white;
+  padding: 0 5px;
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.input input:focus+label,
+.input input:not(:placeholder-shown)+label {
+  top: -10px;
+  left: 5px;
+  font-size: 12px;
+  color: #667eea;
+}
