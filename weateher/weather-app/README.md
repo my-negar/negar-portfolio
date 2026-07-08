@@ -1,16 +1,70 @@
 # React + Vite
+# Weather Dashboard 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive weather dashboard built with React.  
+This project displays current weather information, forecasts, and other weather details using API data.
 
-Currently, two official plugins are available:
+##  Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live Demo: []
 
-## React Compiler
+##  Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌍 Search weather by city
+- 🌡️ Display current temperature
+- ☁️ Show weather conditions
+- 💨 Display wind speed
+- 💧 Show humidity percentage
+- 📅 5-day weather forecast
+- ⏰ Hourly forecast
+- 🌙 Dark mode support
+- 📱 Fully responsive design
 
-## Expanding the ESLint configuration
+##  Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Axios
+- API Integration
+- Vite
+
+## 📷 Preview
+
+(Add project screenshot here)
+
+## ⚙️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/weather-dashboard.git
+
+-------------------------------------------------
+
+Go to the project folder:
+cd weather-dashboard
+
+Run the project:
+npm run dev
+
+---------------------------------------------------
+
+ API
+
+This project uses a weather API to fetch real-time weather data.
+
+You need to create your own API key and add it to your project.
+
+----------------------------------------------------
+
+Purpose
+
+This project was created to practice:
+
+React components
+React Hooks (useState, useEffect)
+Working with APIs
+Managing application state
+Responsive UI design
