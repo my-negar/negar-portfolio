@@ -7,24 +7,21 @@ function App() {
       <Navbar />
 
       <main>
-        {/* ==================== HERO ==================== */}
+        {/*  HERO  */}
         <section className="hero" id="home">
           <div className="hero-container">
 
             <div className="hero-content">
               <p className="hero-small-text">Hello, I'm</p>
 
-              <h1>
+              <h1 className="h1">
                 Negar<span>.</span>
               </h1>
 
               <h2>Front-End Developer</h2>
 
               <p className="hero-description">
-                من به طراحی و توسعه رابط‌های کاربری مدرن، زیبا و
-                کاربرپسند علاقه دارم. با HTML، CSS، JavaScript و React
-                پروژه‌های مختلفی ساخته‌ام و همیشه در حال یادگیری و
-                پیشرفت در مسیر فرانت‌اند هستم.
+              طراح و توسعه دهنده وب‌سایت های مدرن، واکنش گرا و کاربرپسند. درحال حاضر مشغول یادگیری، خلق پروژه‌ها و به دنبال فرصت‌های شغلی جدید در زمینه توسعه فرانت‌اند هستم
               </p>
 
               <div className="hero-buttons">
@@ -47,14 +44,14 @@ function App() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://www.linkedin.com/in/negar-rasoulinezhad-84709a3a5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
                   target="_blank"
                   rel="noreferrer"
                 >
                   LinkedIn
                 </a>
 
-                <a href="mailto:your-email@example.com">
+                <a href="mailto:rasolinejadnegar@gmail.com">
                   Email
                 </a>
               </div>
@@ -75,7 +72,7 @@ function App() {
         </section>
 
 
-     {/* ==================== ABOUT ==================== */}
+     {/*  ABOUT  */}
 <section className="about" id="about">
   <div className="about-container">
 
@@ -93,22 +90,24 @@ function App() {
 
       <h2>Who I Am</h2>
 
-      <p>
-        من یک Front-End Developer هستم که به طراحی و توسعه
-        رابط‌های کاربری مدرن و کاربرپسند علاقه دارم.
-      </p>
+      <p>هستم Front-End Developer من یک </p>
+      <p> به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم</p>
 
       <p>
-        در مسیر یادگیری خودم با HTML، CSS، JavaScript و React
-        پروژه‌های مختلفی ساخته‌ام و همیشه در حال یادگیری
+       پروژه‌های مختلفی ساخته‌ام  HTML, CSS, JavaScript, React در مسیر یادگیری  با
+        <p>
+
+        </p>
+      و همیشه در حال یادگیری
         تکنولوژی‌های جدید و بهتر کردن مهارت‌هایم هستم.
       </p>
 
       <p>
         هدف من این است که با ساخت پروژه‌های واقعی، تجربه
-        بیشتری به دست بیاورم و مسیر حرفه‌ای خودم را در
-        حوزه Front-End ادامه بدهم.
-      </p>
+        بیشتری به دست بیاورم و
+        </p> 
+
+        <p>ادامه بدهم Front-End مسیر حرفه ای خودم را در حوزه</p>
 
       <a href="#contact" className="primary-button">
         Let's Talk
@@ -119,11 +118,11 @@ function App() {
 </section>
 
 
-        {/* ==================== SKILLS ==================== */}
+        {/*  SKILLS  */}
         <section className="skills" id="skills">
           <div className="section-heading">
             <p className="section-label">MY SKILLS</p>
-            <h2>Technologies I Use</h2>
+            <h2 className="h2">Technologies I Use</h2>
 
             <p>
               تکنولوژی‌هایی که در مسیر یادگیری و ساخت پروژه‌ها
@@ -196,17 +195,14 @@ function App() {
         </section>
 
 
-        {/* ==================== PROJECTS ==================== */}
+        {/*  PROJECTS  */}
         <section className="projects" id="projects">
           <div className="section-heading">
             <p className="section-label">MY WORK</p>
 
             <h2>Featured Projects</h2>
 
-            <p>
-              مجموعه‌ای از پروژه‌هایی که برای تمرین و تقویت
-              مهارت‌های Front-End ساخته‌ام.
-            </p>
+            <p> ساخته‌ام Front-End مجموعه ای از پروژه‌هایی که برای تمرین و تقویت مهارت‌های </p>
           </div>
 
 
@@ -231,11 +227,14 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="#" className="project-live">
+                  <a href="https://meteo-lab.ir" className="project-live">
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/weather"
+                   target="_blank"
+                   rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -246,7 +245,7 @@ function App() {
             {/* Todo */}
             <article className="project-card">
               <div className="project-preview">
-                <span>Todo</span>
+                <span>Todo List</span>
               </div>
 
               <div className="project-content">
@@ -266,7 +265,10 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/todolist"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -297,7 +299,10 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/Quizify"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -328,7 +333,10 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/calculator-new"
+                   target="_blank"
+                   rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -359,7 +367,10 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/new-login"
+                   target="_blank"
+                   rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -390,7 +401,7 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#" className="project-github">
+                  <a href="#HOME" className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -401,7 +412,7 @@ function App() {
         </section>
 
 
-        {/* ==================== RESUME ==================== */}
+        {/*  RESUME  */}
         <section className="resume" id="resume">
           <div className="section-heading">
             <p className="section-label">MY RESUME</p>
@@ -432,7 +443,7 @@ function App() {
 
                 <p>
                   ساخت پروژه‌هایی مانند Weather Dashboard،
-                  Todo List، Quiz، Calculator و Login Page.
+                  Todo List، Quiz، Calculator و Login Page, Dark/light mood.
                 </p>
               </div>
             </div>
@@ -454,14 +465,17 @@ function App() {
           </div>
 
           <div className="resume-button">
-            <a href="#" className="primary-button">
+            <a href="https://my-negar.github.io/negar-portfolio/resume/"
+            target="_blank"
+            rel="noreferrer"
+           className="primary-button">
               Download Resume
             </a>
           </div>
         </section>
 
 
-        {/* ==================== CONTACT ==================== */}
+        {/*  CONTACT  */}
         <section className="contact" id="contact">
           <div className="section-heading">
             <p className="section-label">GET IN TOUCH</p>
@@ -484,7 +498,7 @@ function App() {
 
               <div>
                 <h3>Email</h3>
-                <p>your-email@example.com</p>
+                <p>rasolinejadnegar@gmail.com</p>
               </div>
             </a>
 
@@ -505,7 +519,7 @@ function App() {
 
 
             <a
-              href="https://www.linkedin.com"
+              href="https://www.linkedin.com/in/negar-rasoulinezhad-84709a3a5?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               className="contact-card"
@@ -524,7 +538,7 @@ function App() {
       </main>
 
 
-      {/* ==================== FOOTER ==================== */}
+      {/*  FOOTER  */}
       <footer className="footer">
         <div className="footer-logo">
           NEGAR<span>.</span>
