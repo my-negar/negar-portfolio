@@ -227,7 +227,10 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="https://meteo-lab.ir" className="project-live">
+                  <a href="https://meteo-lab.ir"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-live">
                     Live Demo
                   </a>
 
@@ -261,7 +264,10 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="#" className="project-live">
+                  <a  href="https://my-negar.github.io/negar-portfolio/todolist/"
+  target="_blank"
+  rel="noreferrer"
+  className="project-live">
                     Live Demo
                   </a>
 
@@ -295,7 +301,10 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="#" className="project-live">
+                  <a href="https://https://my-negar.github.io/negar-portfolio/Quizify/"
+                    target="_blank"
+                    rel="noreferrer"
+                  className="project-live">
                     Live Demo
                   </a>
 
@@ -329,7 +338,10 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="#" className="project-live">
+                  <a href="https://my-negar.github.io/negar-portfolio/calculator-new/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-live">
                     Live Demo
                   </a>
 
@@ -363,11 +375,14 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="#" className="project-live">
+                  <a href="https://my-negar.github.io/negar-portfolio/login/" 
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-live">
                     Live Demo
                   </a>
 
-                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/new-login"
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/login"
                    target="_blank"
                    rel="noreferrer"
                     className="project-github">
@@ -401,7 +416,10 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a href="#HOME" className="project-github">
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/portfolio-site"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-github">
                     GitHub
                   </a>
                 </div>

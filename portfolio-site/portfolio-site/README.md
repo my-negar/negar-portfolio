@@ -1,16 +1,58 @@
-# React + Vite
+# Negar's Front-End Portfolio 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio website built with React to showcase my front-end skills, projects, and learning journey.
 
-Currently, two official plugins are available:
+##  Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[View My Portfolio](https://my-negar.github.io/portfolio-site/)
 
-## React Compiler
+##  About
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+I'm a Front-End Developer focused on building modern, responsive, and user-friendly web interfaces.
 
-## Expanding the ESLint configuration
+I'm continuously improving my skills through hands-on projects and learning new technologies.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  Skills
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Git
+- TypeScript (Currently Learning)
+
+##  Projects
+
+###  Weather Dashboard
+A weather application built with React and API integration.
+
+[Live Demo](https://my-negar.github.io/negar-portfolio/weather/) • [GitHub](https://github.com/my-negar/negar-portfolio/tree/main/weather)
+
+###  Todo List
+A simple task management application built with HTML, CSS, and JavaScript.
+
+[Live Demo](https://my-negar.github.io/negar-portfolio/todolist/) • [GitHub](https://github.com/my-negar/negar-portfolio/tree/main/todolist)
+
+###  Quiz App
+An interactive quiz application built to practice JavaScript and user interactions.
+
+[Live Demo](https://my-negar.github.io/negar-portfolio/Quizify/) • [GitHub](https://github.com/my-negar/negar-portfolio/tree/main/Quizify)
+
+###  Calculator
+A simple interactive calculator built with JavaScript.
+
+[Live Demo](https://my-negar.github.io/negar-portfolio/calculator/) • [GitHub](https://github.com/my-negar/negar-portfolio/tree/main/calculator)
+
+###  Login Page
+A clean and responsive login page built with HTML and CSS.
+
+[Live Demo](https://my-negar.github.io/negar-portfolio/login/) • [GitHub](https://github.com/my-negar/negar-portfolio/tree/main/login)
+
+##  Technologies
+
+- React
+- JavaScript
+- HTML5
+- CSS3
+- Git & GitHub
+
