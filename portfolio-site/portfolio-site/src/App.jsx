@@ -61,11 +61,10 @@ function App() {
               <div className="hero-image-glow"></div>
 
               <div className="hero-image">
-              <img
-  src={`${import.meta.env.BASE_URL}profile.jpg`}
-  alt="Negar"
-/>
-</div>
+             <img
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
+             alt="Negar"/>
+             </div>
             </div>
 
           </div>
@@ -80,9 +79,9 @@ function App() {
   <div className="about-image-glow"></div>
 
   <img
-  src={`${import.meta.env.BASE_URL}about.jpg`}
-  alt="Negar"
-/>
+    src={`${import.meta.env.BASE_URL}about.jpg`}
+    alt="Negar"
+  />
 </div>
 
     <div className="about-content">
