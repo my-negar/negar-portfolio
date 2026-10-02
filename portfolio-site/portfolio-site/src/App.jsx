@@ -61,11 +61,11 @@ function App() {
               <div className="hero-image-glow"></div>
 
               <div className="hero-image">
-                <img
-                  src="/profile.jpg"
-                  alt="Negar"
-                />
-              </div>
+  <img
+    src="/negar-portfolio/profile.jpg"
+    alt="Negar"
+  />
+</div>
             </div>
 
           </div>
