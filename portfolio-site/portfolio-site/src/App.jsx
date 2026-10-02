@@ -61,10 +61,10 @@ function App() {
               <div className="hero-image-glow"></div>
 
               <div className="hero-image">
-  <img
-    src="/negar-portfolio/profile.jpg"
-    alt="Negar"
-  />
+              <img
+  src={`${import.meta.env.BASE_URL}profile.jpg`}
+  alt="Negar"
+/>
 </div>
             </div>
 
@@ -76,14 +76,14 @@ function App() {
 <section className="about" id="about">
   <div className="about-container">
 
-    <div className="about-image">
-      <div className="about-image-glow"></div>
+  <div className="about-image">
+  <div className="about-image-glow"></div>
 
-      <img
-        src="/about.jpg"
-        alt="Negar"
-      />
-    </div>
+  <img
+  src={`${import.meta.env.BASE_URL}about.jpg`}
+  alt="Negar"
+/>
+</div>
 
     <div className="about-content">
       <p className="section-label">ABOUT ME</p>
