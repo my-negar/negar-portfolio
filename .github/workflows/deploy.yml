@@ -1,15 +1,18 @@
-name: Deploy Portfolio
+name: Deploy React to GitHub Pages
 
 on:
   push:
     branches: ["main"]
-
   workflow_dispatch:
 
 permissions:
   contents: read
   pages: write
   id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -23,41 +26,27 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        working-directory: weather/weather-app
-        run: npm install
+        run: npm ci
 
-      - name: Build Weather App
-        working-directory: weather/weather-app
+      - name: Build
         run: npm run build
 
-      - name: Prepare Pages
-        run: |
-          mkdir -p public
-          cp -r weather/weather-app/dist public/weather
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
-          cp -r todolist public/
-          cp -r quiz public/
-          cp -r calculator public/
-          cp -r login public/
-
-          if [ -f index.html ]; then
-            cp index.html public/
-          fi
-
-      - name: Upload Pages Artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./dist
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     runs-on: ubuntu-latest
-
     needs: build
 
     steps:
