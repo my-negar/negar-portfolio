@@ -719,30 +719,20 @@ section {
   font-size: 11px;
 }
 
+/* RESPONSIVE */
 
-/*  RESPONSIVE  */
-
-/* ==========================================
-   RESPONSIVE (MEDIA QUERIES)
-   ========================================== */
-
-/* تبلت‌ها و موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .navbar {
-    height: 70px; /* کاهش ارتفاع هدر برای صفحات کوچک‌تر */
-    padding: 0 4%; /* کاهش فاصله از چپ و راست */
+    height: 70px; 
+    padding: 0 4%; 
   }
 
   .navbar-logo {
-    font-size: 20px; /* کمی کوچک‌تر شدن لوگو */
+    font-size: 20px; 
   }
 
-  /* لینک‌های منو در موبایل */
   .nav-links {
-    display: none; /* مخفی کردن لینک‌ها برای جلوگیری از بهم‌ریختگی (بعداً با همبرگر منو یا جاوااسکریپت باز میشه) */
-    /* اگر منوی همبرگری نداری، می‌تونی فاصله لینک‌ها رو کم کنی:
-       gap: 16px; 
-    */
+    display: none;
   }
 
   .navbar-button {
@@ -751,7 +741,6 @@ section {
   }
 }
 
-/* موبایل‌های کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .navbar {
     height: 65px;
@@ -764,20 +753,16 @@ section {
 }
 
 
-/* ==========================================
-   HERO SECTION RESPONSIVE (Keeping Image Side-by-Side)
-   ========================================== */
+/* HERO SECTION RESPONSIVE  */
 
-/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
 @media (max-width: 992px) {
   .hero {
     padding: 100px 4% 60px;
   }
 
-  /* کاهش فاصله دو ستون از 80px به 30px */
   .hero-container {
     gap: 30px;
-    grid-template-columns: 1fr 1fr; /* حفظ دو ستون */
+    grid-template-columns: 1fr 1fr; 
   }
 
   .hero h1 {
@@ -793,7 +778,6 @@ section {
     font-size: 14px;
   }
 
-  /* کوچیک‌تر کردن عکس تا کنار متن جا بشه */
   .hero-image {
     width: 250px;
     height: 320px;
@@ -805,7 +789,6 @@ section {
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
@@ -813,11 +796,10 @@ section {
   }
 
   .hero-container {
-    gap: 15px; /* حداقل فاصله ممکن بین متن و عکس */
-    grid-template-columns: 1.2fr 0.8fr; /* دادن فضای بیشتر به متن */
+    gap: 15px; 
+    grid-template-columns: 1.2fr 0.8fr; 
   }
 
-  /* کوچک‌تر کردن نور بنفش پس‌زمینه برای جلوگیری از اسکرول افقی */
   .hero::before {
     width: 250px;
     height: 250px;
@@ -843,7 +825,7 @@ section {
   }
 
   .hero-buttons {
-    flex-direction: column; /* عمودی شدن دکمه‌ها برای جا شدن در ستون چپ */
+    flex-direction: column;
     gap: 8px;
     margin-top: 20px;
   }
@@ -859,7 +841,6 @@ section {
     margin-top: 20px;
   }
 
-  /* سایز عکس در موبایل */
   .hero-image {
     width: 170px;
     height: 220px;
@@ -875,7 +856,6 @@ section {
   }
 }
 
-/* موبایل‌های خیلی کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .hero-image {
     width: 130px;
@@ -892,17 +872,13 @@ section {
   }
 }
 
-/* ==========================================
 
-  /* ==========================================
-   ABOUT SECTION RESPONSIVE (Keeping Image Side-by-Side)
-   ========================================== */
+  /*ABOUT SECTION RESPONSIVE */
 
-/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
 @media (max-width: 992px) {
   .about-container {
-    grid-template-columns: 0.8fr 1.2fr; /* حفظ ساختار دو ستونه */
-    gap: 30px; /* کاهش فاصله بین عکس و متن */
+    grid-template-columns: 0.8fr 1.2fr; 
+    gap: 30px;
   }
 
   .about-content h2 {
@@ -924,15 +900,14 @@ section {
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .about {
     padding: 70px 3%;
   }
 
   .about-container {
-    grid-template-columns: 0.75fr 1.25fr; /* فضای بیشتر برای متن در موبایل */
-    gap: 15px; /* حداقل فاصله برای جا شدن دو ستون */
+    grid-template-columns: 0.75fr 1.25fr; 
+    gap: 15px; 
   }
 
   .about-content h2 {
@@ -946,7 +921,6 @@ section {
     margin-bottom: 12px;
   }
 
-  /* سایز عکس در موبایل */
   .about-image {
     max-width: 160px;
   }
@@ -962,7 +936,6 @@ section {
   }
 }
 
-/* موبایل‌های خیلی کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .about-container {
     gap: 10px;
@@ -990,18 +963,15 @@ section {
     font-size: 11px;
   }
 }
-/* ==========================================
-   SKILLS SECTION RESPONSIVE (3 Columns Always)
-   ========================================== */
+/* SKILLS SECTION RESPONSIVE */
 
-/* تبلت‌ها (کمتر از 992px) */
 @media (max-width: 992px) {
   .skills {
     padding: 90px 4%;
   }
 
   .skills-container {
-    gap: 12px; /* کاهش فاصله بین ۳ کارت */
+    gap: 12px; 
   }
 
   .skill-card {
@@ -1025,14 +995,13 @@ section {
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .skills {
     padding: 70px 2%;
   }
 
   .skills-container {
-    gap: 8px; /* حداقل فاصله ممکن بین کارت‌ها */
+    gap: 8px; 
   }
 
   .skill-card {
@@ -1060,7 +1029,6 @@ section {
   }
 }
 
-/* موبایل‌های خیلی کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .skills-container {
     gap: 6px;
@@ -1088,18 +1056,14 @@ section {
   }
 }
 
-/* ==========================================
-   PROJECTS & RESUME RESPONSIVE (2 Columns Always for Projects)
-   ========================================== */
+/*PROJECTS & RESUME RESPONSIVE  */
 
-/* تبلت‌ها (کمتر از 992px) */
 @media (max-width: 992px) {
   .projects,
   .resume {
     padding: 90px 4%;
   }
 
-  /* کاهش فاصله بین کارت‌های پروژه (حفظ ۲ ستون) */
   .projects-container {
     gap: 16px;
   }
@@ -1116,14 +1080,12 @@ section {
     font-size: 20px;
   }
 
-  /* تنظیمات آیتم‌های رزومه */
   .resume-item {
     padding: 22px;
     gap: 18px;
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .projects,
   .resume {
@@ -1131,7 +1093,7 @@ section {
   }
 
   .projects-container {
-    gap: 12px; /* حداقل فاصله بین کارت‌ها برای جا شدن ۲ ستون */
+    gap: 12px;
   }
 
   .project-card {
@@ -1139,7 +1101,7 @@ section {
   }
 
   .project-preview {
-    height: 130px; /* کاهش ارتفاع پیش‌نمایش عکس/آیکون پروژه */
+    height: 130px; 
   }
 
   .project-preview span {
@@ -1166,9 +1128,8 @@ section {
     margin-bottom: 16px;
   }
 
-  /* دکمه‌های گیت‌هاب و لایو پروژه */
   .project-links {
-    flex-direction: column; /* عمودی شدن دکمه‌ها تا در ستون باریک بیرون نزنند */
+    flex-direction: column; 
     gap: 6px;
   }
 
@@ -1179,7 +1140,6 @@ section {
     font-size: 11px;
   }
 
-  /* رزومه در موبایل */
   .resume-item {
     gap: 14px;
     padding: 16px;
@@ -1202,7 +1162,6 @@ section {
   }
 }
 
-/* موبایل‌های کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .projects-container {
     gap: 8px;
@@ -1240,9 +1199,8 @@ section {
     font-size: 10px;
   }
 
-  /* بهینه‌سازی رزومه برای گوشی‌های کوچک */
   .resume-item {
-    flex-direction: column; /* قرارگیری آیکون/عدد رزومه بالای متن */
+    flex-direction: column; 
     gap: 10px;
   }
 
@@ -1252,11 +1210,8 @@ section {
   }
 }
 
-/* ==========================================
-   RESUME SECTION RESPONSIVE
-   ========================================== */
+/*RESUME SECTION RESPONSIVE */
 
-/* تبلت‌ها (کمتر از 992px) */
 @media (max-width: 992px) {
   .resume {
     padding: 90px 4%;
@@ -1276,7 +1231,6 @@ section {
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   .resume {
     padding: 70px 3%;
@@ -1288,7 +1242,6 @@ section {
     border-radius: 12px;
   }
 
-  /* تنظیم سایز باکس عدد یا آیکون سمت چپ */
   .resume-item > span {
     min-width: 38px;
     height: 38px;
@@ -1311,7 +1264,6 @@ section {
   }
 }
 
-/* موبایل‌های کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   .resume-item {
     padding: 14px;
@@ -1335,18 +1287,14 @@ section {
   }
 }
 
-/* ==========================================
-   CONTACT & FOOTER RESPONSIVE
-   ========================================== */
+/*CONTACT & FOOTER RESPONSIVE*/
 
-/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
 @media (max-width: 992px) {
   /* CONTACT */
   .contact {
     padding: 90px 4%;
   }
 
-  /* چیدمان ۲ ستونه: کارت اول و دوم کنار هم، کارت سوم سطر پایین */
   .contact-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -1380,7 +1328,6 @@ section {
   }
 }
 
-/* موبایل‌ها (کمتر از 768px) */
 @media (max-width: 768px) {
   /* CONTACT */
   .contact {
@@ -1442,7 +1389,6 @@ section {
   }
 }
 
-/* موبایل‌های کوچک (کمتر از 480px) */
 @media (max-width: 480px) {
   /* CONTACT */
   .contact-container {
@@ -1474,11 +1420,9 @@ section {
   }
 }
 
-/* ==========================================
-   HAMBURGER MENU STYLES
-   ========================================== */
+/*HAMBURGER MENU STYLES */
 
-/* استایل دکمه همبرگری (در حالت دسکتاپ مخفی است) */
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -1500,21 +1444,19 @@ section {
   transition: all 0.3s ease;
 }
 
-/* استایل‌های مربوط به تبلت و موبایل */
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* نمایش دکمه همبرگری در موبایل */
+    display: flex;
   }
 
   .navbar-button {
-    display: none; /* مخفی شدن دکمه Let's Talk برای خلوت شدن هدر */
+    display: none; 
   }
 
-  /* کشویی شدن منو از سمت راست */
   .nav-links {
     position: fixed;
     top: 0;
-    right: -100%; /* منو در حالت عادی خارج از صفحه است */
+    right: -100%; 
     width: 70%;
     height: 100vh;
     background: rgba(11, 9, 16, 0.96);
@@ -1534,13 +1476,11 @@ section {
     font-size: 16px;
   }
 
-  /* کلاس active که با کلیک، منو رو وارد صفحه می‌کنه */
   .nav-links.active {
     right: 0;
   
   }
 
-  /* انیمیشن تبدیل ۳ خط همبرگری به علامت X */
   .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
