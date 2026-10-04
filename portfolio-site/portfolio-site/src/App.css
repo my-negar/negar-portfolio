@@ -722,102 +722,834 @@ section {
 
 /*  RESPONSIVE  */
 
-@media (max-width: 900px) {
+/* ==========================================
+   RESPONSIVE (MEDIA QUERIES)
+   ========================================== */
+
+/* تبلت‌ها و موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
   .navbar {
-    padding: 0 5%;
+    height: 70px; /* کاهش ارتفاع هدر برای صفحات کوچک‌تر */
+    padding: 0 4%; /* کاهش فاصله از چپ و راست */
   }
 
+  .navbar-logo {
+    font-size: 20px; /* کمی کوچک‌تر شدن لوگو */
+  }
+
+  /* لینک‌های منو در موبایل */
   .nav-links {
-    gap: 15px;
+    display: none; /* مخفی کردن لینک‌ها برای جلوگیری از بهم‌ریختگی (بعداً با همبرگر منو یا جاوااسکریپت باز میشه) */
+    /* اگر منوی همبرگری نداری، می‌تونی فاصله لینک‌ها رو کم کنی:
+       gap: 16px; 
+    */
   }
 
   .navbar-button {
-    display: none;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* موبایل‌های کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    height: 65px;
+    padding: 0 16px;
   }
 
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 60px;
-  }
-
-  .hero-description {
-    margin: 0 auto;
-  }
-
-  .hero-buttons,
-  .social-links {
-    justify-content: center;
-  }
-
-  .hero-image {
-    width: 280px;
-    height: 350px;
-  }
-
-  .skills-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .contact-container {
-    grid-template-columns: 1fr;
+  .navbar-logo {
+    font-size: 18px;
   }
 }
 
 
-@media (max-width: 650px) {
+/* ==========================================
+   HERO SECTION RESPONSIVE (Keeping Image Side-by-Side)
+   ========================================== */
 
-  .navbar {
-    height: 70px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
+/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
+@media (max-width: 992px) {
   .hero {
-    padding: 110px 6% 70px;
+    padding: 100px 4% 60px;
+  }
+
+  /* کاهش فاصله دو ستون از 80px به 30px */
+  .hero-container {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr; /* حفظ دو ستون */
   }
 
   .hero h1 {
-    font-size: 65px;
+    font-size: clamp(36px, 6vw, 60px);
+    letter-spacing: -1px;
   }
 
   .hero h2 {
-    font-size: 24px;
+    font-size: 20px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  /* کوچیک‌تر کردن عکس تا کنار متن جا بشه */
+  .hero-image {
+    width: 250px;
+    height: 320px;
+  }
+
+  .hero-image-glow {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 90px 3% 50px;
+  }
+
+  .hero-container {
+    gap: 15px; /* حداقل فاصله ممکن بین متن و عکس */
+    grid-template-columns: 1.2fr 0.8fr; /* دادن فضای بیشتر به متن */
+  }
+
+  /* کوچک‌تر کردن نور بنفش پس‌زمینه برای جلوگیری از اسکرول افقی */
+  .hero::before {
+    width: 250px;
+    height: 250px;
+    filter: blur(80px);
+  }
+
+  .hero-small-text {
+    font-size: 13px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 7vw, 40px);
+  }
+
+  .hero h2 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+    line-height: 1.6;
   }
 
   .hero-buttons {
-    flex-direction: column;
+    flex-direction: column; /* عمودی شدن دکمه‌ها برای جا شدن در ستون چپ */
+    gap: 8px;
+    margin-top: 20px;
   }
 
   .primary-button,
   .secondary-button {
-    width: 100%;
-  }
-
-  .hero-image {
-    width: 240px;
-    height: 310px;
-  }
-
-  .section-heading h2 {
-    font-size: 34px;
-  }
-
-  .skills-container {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr;
-  }
-
-  .resume-item {
-    gap: 15px;
+    padding: 8px 12px;
+    font-size: 12px;
   }
 
   .social-links {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  /* سایز عکس در موبایل */
+  .hero-image {
+    width: 170px;
+    height: 220px;
+    border-radius: 90px 90px 15px 15px;
+  }
+
+  .hero-image::before {
+    border-radius: 82px 82px 12px 12px;
+  }
+
+  .hero-image img {
+    border-radius: 85px 85px 13px 13px;
+  }
+}
+
+/* موبایل‌های خیلی کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .hero-image {
+    width: 130px;
+    height: 170px;
+    border-radius: 65px 65px 10px 10px;
+  }
+
+  .hero-image::before {
+    border-radius: 58px 58px 8px 8px;
+  }
+
+  .hero-image img {
+    border-radius: 60px 60px 9px 9px;
+  }
+}
+
+/* ==========================================
+
+  /* ==========================================
+   ABOUT SECTION RESPONSIVE (Keeping Image Side-by-Side)
+   ========================================== */
+
+/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 0.8fr 1.2fr; /* حفظ ساختار دو ستونه */
+    gap: 30px; /* کاهش فاصله بین عکس و متن */
+  }
+
+  .about-content h2 {
+    font-size: 34px;
+    margin-bottom: 16px;
+  }
+
+  .about-content > p:not(.section-label) {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .about-image {
+    max-width: 280px;
+  }
+
+  .about-image img {
+    height: 330px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  .about {
+    padding: 70px 3%;
+  }
+
+  .about-container {
+    grid-template-columns: 0.75fr 1.25fr; /* فضای بیشتر برای متن در موبایل */
+    gap: 15px; /* حداقل فاصله برای جا شدن دو ستون */
+  }
+
+  .about-content h2 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .about-content > p:not(.section-label) {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* سایز عکس در موبایل */
+  .about-image {
+    max-width: 160px;
+  }
+
+  .about-image img {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .about-image-glow {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* موبایل‌های خیلی کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .about-container {
+    gap: 10px;
+  }
+
+  .about-image {
+    max-width: 120px;
+  }
+
+  .about-image img {
+    height: 170px;
+    border-radius: 12px;
+  }
+
+  .about-content h2 {
+    font-size: 20px;
+  }
+
+  .about-content > p:not(.section-label) {
+    font-size: 11px;
+  }
+
+  .about-content .primary-button {
+    padding: 7px 12px;
+    font-size: 11px;
+  }
+}
+/* ==========================================
+   SKILLS SECTION RESPONSIVE (3 Columns Always)
+   ========================================== */
+
+/* تبلت‌ها (کمتر از 992px) */
+@media (max-width: 992px) {
+  .skills {
+    padding: 90px 4%;
+  }
+
+  .skills-container {
+    gap: 12px; /* کاهش فاصله بین ۳ کارت */
+  }
+
+  .skill-card {
+    min-height: 160px;
+    padding: 20px 10px;
+  }
+
+  .skill-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .skill-card h3 {
+    font-size: 16px;
+  }
+
+  .skill-card p {
+    font-size: 12px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  .skills {
+    padding: 70px 2%;
+  }
+
+  .skills-container {
+    gap: 8px; /* حداقل فاصله ممکن بین کارت‌ها */
+  }
+
+  .skill-card {
+    min-height: 130px;
+    padding: 14px 6px;
+    border-radius: 12px;
+  }
+
+  .skill-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+  }
+
+  .skill-card h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .skill-card p {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+}
+
+/* موبایل‌های خیلی کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .skills-container {
+    gap: 6px;
+  }
+
+  .skill-card {
+    padding: 10px 4px;
+    border-radius: 10px;
+  }
+
+  .skill-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+  }
+
+  .skill-card h3 {
+    font-size: 11px;
+  }
+
+  .skill-card p {
+    font-size: 9px;
+  }
+}
+
+/* ==========================================
+   PROJECTS & RESUME RESPONSIVE (2 Columns Always for Projects)
+   ========================================== */
+
+/* تبلت‌ها (کمتر از 992px) */
+@media (max-width: 992px) {
+  .projects,
+  .resume {
+    padding: 90px 4%;
+  }
+
+  /* کاهش فاصله بین کارت‌های پروژه (حفظ ۲ ستون) */
+  .projects-container {
+    gap: 16px;
+  }
+
+  .project-preview {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-content h3 {
+    font-size: 20px;
+  }
+
+  /* تنظیمات آیتم‌های رزومه */
+  .resume-item {
+    padding: 22px;
     gap: 18px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  .projects,
+  .resume {
+    padding: 70px 3%;
+  }
+
+  .projects-container {
+    gap: 12px; /* حداقل فاصله بین کارت‌ها برای جا شدن ۲ ستون */
+  }
+
+  .project-card {
+    border-radius: 14px;
+  }
+
+  .project-preview {
+    height: 130px; /* کاهش ارتفاع پیش‌نمایش عکس/آیکون پروژه */
+  }
+
+  .project-preview span {
+    font-size: 18px;
+  }
+
+  .project-content {
+    padding: 14px 10px;
+  }
+
+  .project-tech {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .project-content h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .project-content > p:not(.project-tech) {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  /* دکمه‌های گیت‌هاب و لایو پروژه */
+  .project-links {
+    flex-direction: column; /* عمودی شدن دکمه‌ها تا در ستون باریک بیرون نزنند */
+    gap: 6px;
+  }
+
+  .project-live,
+  .project-github {
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+
+  /* رزومه در موبایل */
+  .resume-item {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .resume-item > span {
+    min-width: 38px;
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .resume-item h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .resume-item p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+/* موبایل‌های کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .projects-container {
+    gap: 8px;
+  }
+
+  .project-card {
+    border-radius: 12px;
+  }
+
+  .project-preview {
+    height: 100px;
+  }
+
+  .project-preview span {
+    font-size: 15px;
+  }
+
+  .project-content {
+    padding: 10px 8px;
+  }
+
+  .project-content h3 {
+    font-size: 13px;
+  }
+
+  .project-content > p:not(.project-tech) {
+    font-size: 11px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .project-live,
+  .project-github {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  /* بهینه‌سازی رزومه برای گوشی‌های کوچک */
+  .resume-item {
+    flex-direction: column; /* قرارگیری آیکون/عدد رزومه بالای متن */
+    gap: 10px;
+  }
+
+  .resume-item > span {
+    min-width: 32px;
+    height: 32px;
+  }
+}
+
+/* ==========================================
+   RESUME SECTION RESPONSIVE
+   ========================================== */
+
+/* تبلت‌ها (کمتر از 992px) */
+@media (max-width: 992px) {
+  .resume {
+    padding: 90px 4%;
+  }
+
+  .resume-container {
+    gap: 15px;
+  }
+
+  .resume-item {
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .resume-item h3 {
+    font-size: 18px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  .resume {
+    padding: 70px 3%;
+  }
+
+  .resume-item {
+    padding: 16px;
+    gap: 14px;
+    border-radius: 12px;
+  }
+
+  /* تنظیم سایز باکس عدد یا آیکون سمت چپ */
+  .resume-item > span {
+    min-width: 38px;
+    height: 38px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .resume-item h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .resume-item p {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .resume-button {
+    margin-top: 25px;
+  }
+}
+
+/* موبایل‌های کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  .resume-item {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .resume-item > span {
+    min-width: 32px;
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .resume-item h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .resume-item p {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+}
+
+/* ==========================================
+   CONTACT & FOOTER RESPONSIVE
+   ========================================== */
+
+/* تبلت‌ها و لپ‌تاپ‌های کوچک (کمتر از 992px) */
+@media (max-width: 992px) {
+  /* CONTACT */
+  .contact {
+    padding: 90px 4%;
+  }
+
+  /* چیدمان ۲ ستونه: کارت اول و دوم کنار هم، کارت سوم سطر پایین */
+  .contact-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .contact-card:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .contact-card {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .contact-card > span {
+    width: 38px;
+    height: 38px;
+  }
+
+  .contact-card h3 {
+    font-size: 14px;
+  }
+
+  .contact-card p {
+    font-size: 11px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 50px 4% 20px;
+  }
+}
+
+/* موبایل‌ها (کمتر از 768px) */
+@media (max-width: 768px) {
+  /* CONTACT */
+  .contact {
+    padding: 70px 3%;
+  }
+
+  .contact-container {
+    gap: 12px;
+  }
+
+  .contact-card {
+    padding: 14px 10px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .contact-card > span {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .contact-card h3 {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .contact-card p {
+    font-size: 11px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 40px 3% 20px;
+  }
+
+  .footer-logo {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footer > p {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+
+  .footer-links a {
+    font-size: 11px;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+  }
+}
+
+/* موبایل‌های کوچک (کمتر از 480px) */
+@media (max-width: 480px) {
+  /* CONTACT */
+  .contact-container {
+    gap: 8px;
+  }
+
+  .contact-card {
+    padding: 12px 8px;
+    gap: 8px;
+  }
+
+  .contact-card > span {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .contact-card h3 {
+    font-size: 12px;
+  }
+
+  .contact-card p {
+    font-size: 10px;
+  }
+
+  /* FOOTER */
+  .footer-links {
+    gap: 12px;
+  }
+}
+
+/* ==========================================
+   HAMBURGER MENU STYLES
+   ========================================== */
+
+/* استایل دکمه همبرگری (در حالت دسکتاپ مخفی است) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* استایل‌های مربوط به تبلت و موبایل */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* نمایش دکمه همبرگری در موبایل */
+  }
+
+  .navbar-button {
+    display: none; /* مخفی شدن دکمه Let's Talk برای خلوت شدن هدر */
+  }
+
+  /* کشویی شدن منو از سمت راست */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%; /* منو در حالت عادی خارج از صفحه است */
+    width: 70%;
+    height: 100vh;
+    background: rgba(11, 9, 16, 0.96);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    transition: right 0.35s ease;
+    border-left: 1px solid rgba(180, 124, 255, 0.2);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  /* کلاس active که با کلیک، منو رو وارد صفحه می‌کنه */
+  .nav-links.active {
+    right: 0;
+  
+  }
+
+  /* انیمیشن تبدیل ۳ خط همبرگری به علامت X */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
