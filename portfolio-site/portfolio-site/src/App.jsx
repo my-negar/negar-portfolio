@@ -300,7 +300,7 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="https://https://my-negar.github.io/negar-portfolio/Quizify/"
+                  <a href="https://my-negar.github.io/negar-portfolio/Quizify/"
                     target="_blank"
                     rel="noreferrer"
                   className="project-live">
