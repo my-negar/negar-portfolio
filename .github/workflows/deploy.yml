@@ -33,9 +33,18 @@ jobs:
         working-directory: ./portfolio-site/portfolio-site
         run: npm ci
 
-      - name: Build
+      - name: Build React Portfolio
         working-directory: ./portfolio-site/portfolio-site
         run: npm run build
+
+      - name: Copy projects
+        run: |
+          cp -r todolist portfolio-site/portfolio-site/dist/
+          cp -r calculator-new portfolio-site/portfolio-site/dist/
+          cp -r login portfolio-site/portfolio-site/dist/
+          cp -r Quizify portfolio-site/portfolio-site/dist/
+          cp -r moonlight portfolio-site/portfolio-site/dist/
+          cp -r resume portfolio-site/portfolio-site/dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -48,7 +57,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
     needs: build
 
