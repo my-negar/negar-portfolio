@@ -21,7 +21,7 @@ function App() {
               <h2>Front-End Developer</h2>
 
               <p className="hero-description">
-              طراح و توسعه دهنده وب‌سایت های مدرن، واکنش گرا و کاربرپسند. درحال حاضر مشغول یادگیری، خلق پروژه‌ها و به دنبال فرصت‌های شغلی جدید در زمینه توسعه فرانت‌اند هستم
+                طراح و توسعه دهنده وب‌سایت های مدرن، واکنش گرا و کاربرپسند. درحال حاضر مشغول یادگیری، خلق پروژه‌ها و به دنبال فرصت‌های شغلی جدید در زمینه توسعه فرانت‌اند هستم
               </p>
 
               <div className="hero-buttons">
@@ -61,51 +61,45 @@ function App() {
               <div className="hero-image-glow"></div>
 
               <div className="hero-image">
-             <img
-              src={`${import.meta.env.BASE_URL}profile.jpg`}
-             alt="Negar"/>
-             </div>
+                <img
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt="Negar" />
+              </div>
             </div>
 
           </div>
         </section>
 
+        {/*  ABOUT  */}
+        <section className="about" id="about">
+          <div className="about-container">
 
-     {/*  ABOUT  */}
-<section className="about" id="about">
-  <div className="about-container">
+            <div className="about-image">
+              <div className="about-image-glow"></div>
+              <br></br><br></br>
+              <img
+                src={`${import.meta.env.BASE_URL}about.jpg`}
+                alt="Negar"
+              />
+            </div>
+            <div className="about-content"><br></br>
+              <h3 className="section-label">ABOUT ME</h3>
 
-  <div className="about-image">
-  <div className="about-image-glow"></div>
-<br></br><br></br>
-  <img
-    src={`${import.meta.env.BASE_URL}about.jpg`}
-    alt="Negar"
-  />
-</div>
+              <h2 className="h2">Who I Am</h2><br></br>
 
-    <div className="about-content"><br></br>
-      <h3 className="section-label">ABOUT ME</h3>
+              <p> من یک Front-end Developer هستم.<br></br>
+                به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم،<br></br>
+                در مسیر یادگیری پروژه‌های مختلفی با HTML, CSS, JavaScript, React
+                ساخته‌ام و همیشه درحال یادگیری تکنولوژی‌های جدید و بهتر کردن مهارت‌هایم هستم.  <br></br>
+                هدف من این است که با ساخت پروژه‌های واقعی، تجربه بیشتری به دست بیاورم و مسیر حرفه ای خودم را در حوزه Front-End ادامه بدهم.
+              </p>
 
-      <h2 className="h2">Who I Am</h2><br></br>
-
-      <p> من یک Front-end Developer هستم.<br></br>
-       به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم،<br></br>
-        در مسیر یادگیری پروژه‌های مختلفی با HTML, CSS, JavaScript, React 
-        ساخته‌ام و همیشه درحال یادگیری تکنولوژی‌های جدید و بهتر کردن مهارت‌هایم هستم.  <br></br>
-        هدف من این است که با ساخت پروژه‌های واقعی، تجربه بیشتری به دست بیاورم و مسیر حرفه ای خودم را در حوزه Front-End ادامه بدهم.
-      </p>
-      
-
-
-      <a href="#contact" className="primary-button">
-        Let's Talk
-      </a>
-    </div>
-
-  </div>
-</section>
-
+              <a href="#contact" className="primary-button">
+                Let's Talk
+              </a>
+            </div>
+          </div>
+        </section>
 
         {/*  SKILLS  */}
         <section className="skills" id="skills">
@@ -140,7 +134,6 @@ function App() {
               <p>Modern Styling</p>
             </div>
 
-
             <div className="skill-card">
               <div className="skill-icon js-icon">
                 <span>JS</span>
@@ -149,8 +142,6 @@ function App() {
               <h3>JavaScript</h3>
               <p>Interactive Web</p>
             </div>
-
-
             <div className="skill-card">
               <div className="skill-icon react-icon">
                 <span>⚛</span>
@@ -159,7 +150,6 @@ function App() {
               <h3>React</h3>
               <p>UI Development</p>
             </div>
-
 
             <div className="skill-card">
               <div className="skill-icon git-icon">
@@ -170,7 +160,6 @@ function App() {
               <p>Version Control</p>
             </div>
 
-
             <div className="skill-card">
               <div className="skill-icon ts-icon">
                 <span>TS</span>
@@ -179,25 +168,18 @@ function App() {
               <h3>TypeScript</h3>
               <p>Currently Learning</p>
             </div>
-
           </div>
         </section>
-
 
         {/*  PROJECTS  */}
         <section className="projects" id="projects">
           <div className="section-heading">
             <h3 className="section-label">MY WORK</h3>
-
             <h2 className="h2">Featured Projects</h2>
 
             <h6 className="h5">  مجموعه ای از پروژه‌هایی که برای تمرین و تقویت مهارت‌هایم در این مسیر ساخته‌ام </h6>
           </div>
-
-
           <div className="projects-container">
-
-
 
             {/* React Website */}
             <article className="project-card">
@@ -223,9 +205,9 @@ function App() {
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/portfolio-site"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-github">
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -253,15 +235,15 @@ function App() {
 
                 <div className="project-links">
                   <a href="https://meteo-lab.ir"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-live">
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-live">
                     Live Demo
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/weather"
-                   target="_blank"
-                   rel="noreferrer"
+                    target="_blank"
+                    rel="noreferrer"
                     className="project-github">
                     GitHub
                   </a>
@@ -285,21 +267,21 @@ function App() {
 
                 <p>
                   اپلیکیشن مدیریت کارها برای اضافه کردن و مدیریت
-                   وظایف روزانه با JavaScript.
+                  وظایف روزانه با JavaScript.
                 </p>
 
                 <div className="project-links">
-                  <a  href="https://my-negar.github.io/negar-portfolio/todolist/"
-  target="_blank"
-  rel="noreferrer"
-  className="project-live">
+                  <a href="https://my-negar.github.io/negar-portfolio/todolist/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-live">
                     Live Demo
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/todolist"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-github">
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -328,14 +310,14 @@ function App() {
                   <a href="https://my-negar.github.io/negar-portfolio/Quizify/"
                     target="_blank"
                     rel="noreferrer"
-                  className="project-live">
+                    className="project-live">
                     Live Demo
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/Quizify"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-github">
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-github">
                     GitHub
                   </a>
                 </div>
@@ -357,21 +339,21 @@ function App() {
                 <h3>Calculator</h3>
 
                 <p>
-                  ماشین حساب تعاملی ساخته شده با JavaScript برای  
-                 تمرین منطق برنامه‌نویسی.
+                  ماشین حساب تعاملی ساخته شده با JavaScript برای
+                  تمرین منطق برنامه‌نویسی.
                 </p>
 
                 <div className="project-links">
                   <a href="https://my-negar.github.io/negar-portfolio/calculator-new/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-live">
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-live">
                     Live Demo
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/calculator-new"
-                   target="_blank"
-                   rel="noreferrer"
+                    target="_blank"
+                    rel="noreferrer"
                     className="project-github">
                     GitHub
                   </a>
@@ -399,16 +381,16 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="https://my-negar.github.io/negar-portfolio/login/" 
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-live">
+                  <a href="https://my-negar.github.io/negar-portfolio/login/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="project-live">
                     Live Demo
                   </a>
 
                   <a href="https://github.com/my-negar/negar-portfolio/tree/main/login"
-                   target="_blank"
-                   rel="noreferrer"
+                    target="_blank"
+                    rel="noreferrer"
                     className="project-github">
                     GitHub
                   </a>
@@ -437,7 +419,7 @@ function App() {
                 <h3>Front-End Development</h3>
 
                 <p>
-                       ساخت و یادگیری پروژه‌های مختلف با استفاده از HTML, CSS, JavaScript, React برای تقویت مهارت‌های فرانت‌اند
+                  ساخت و یادگیری پروژه‌های مختلف با استفاده از HTML, CSS, JavaScript, React برای تقویت مهارت‌های فرانت‌اند
                 </p>
               </div>
             </div>
@@ -462,9 +444,9 @@ function App() {
                 <h3>Continuous Learning</h3>
 
                 <p>
-                به‌صورت مستمر در حال تقویت مهارت‌هایم در JavaScript، React، TypeScript و توسعه مدرن Front-End هستم.
+                  به‌صورت مستمر در حال تقویت مهارت‌هایم در JavaScript، React، TypeScript و توسعه مدرن Front-End هستم.
 
-                   </p>
+                </p>
               </div>
             </div>
 
@@ -472,9 +454,9 @@ function App() {
 
           <div className="resume-button">
             <a href="https://my-negar.github.io/negar-portfolio/resume/"
-            target="_blank"
-            rel="noreferrer"
-           className="primary-button">
+              target="_blank"
+              rel="noreferrer"
+              className="primary-button">
               Download Resume
             </a>
           </div>
@@ -490,7 +472,7 @@ function App() {
 
             <p>
               برای فرصت‌های کاری، کارآموزی یا همکاری می‌توانید
-             از طریق راه‌های ارتباطی زیر با من در تماس باشید
+              از طریق راه‌های ارتباطی زیر با من در تماس باشید
             </p>
           </div>
 
