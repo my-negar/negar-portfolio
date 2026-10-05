@@ -5,7 +5,7 @@ const list = document.getElementById("list");
 btn.addEventListener("click",
     function () {
         const value = input.value;
-        if (value === " ") return;
+        if (value.trim() === "") return;
 
         const li = document.createElement("li");
         li.innerText = value;
@@ -19,7 +19,7 @@ btn.addEventListener("click",
         });
 
         list.appendChild(li);
-        input.value = " ";
+        input.value = "";
     });
 
 input.addEventListener("keydown",

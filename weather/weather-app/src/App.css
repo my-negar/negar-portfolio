@@ -319,73 +319,74 @@ body{
   font-weight:600;
 }
 
+
 /*ریسپانسیو*/
 
 
 @media(max-width:1200px){
 
-  .top-section{
-      grid-template-columns:1fr;
+    .top-section{
+        grid-template-columns:1fr;
+    }
+  
+    .forecast{
+        grid-template-columns:1fr;
+    }
+  
+    .bottom-section{
+        grid-template-columns:1fr;
+    }
+  
   }
-
-  .forecast{
-      grid-template-columns:1fr;
+  
+  @media(max-width:900px){
+  
+    .container{
+        flex-direction:column;
+    }
+  
+    .sidebar{
+        width:100%;
+    }
+  
+    .header{
+        flex-direction:column;
+        gap:20px;
+        align-items:flex-start;
+    }
+  
+    .header input{
+        width:100%;
+    }
+  
   }
-
-  .bottom-section{
-      grid-template-columns:1fr;
+  
+  @media(max-width:600px){
+  
+    .forecast-list,
+    .hourly-list,
+    .cities{
+        grid-template-columns:1fr;
+        display:grid;
+    }
+  
+    .details-grid{
+        grid-template-columns:1fr;
+    }
+  
+    .weather-card h1{
+        font-size:60px;
+    }
+  
   }
-
-}
-
-@media(max-width:900px){
-
-  .container{
-      flex-direction:column;
+  
+  .header > button{
+    height:50px;
+    padding:0 25px;
+    border:none;
+    border-radius:25px;
+    background:#4d74ff;
+    color:white;
+    cursor:pointer;
+    font-size:16px;
   }
-
-  .sidebar{
-      width:100%;
-  }
-
-  .header{
-      flex-direction:column;
-      gap:20px;
-      align-items:flex-start;
-  }
-
-  .header input{
-      width:100%;
-  }
-
-}
-
-@media(max-width:600px){
-
-  .forecast-list,
-  .hourly-list,
-  .cities{
-      grid-template-columns:1fr;
-      display:grid;
-  }
-
-  .details-grid{
-      grid-template-columns:1fr;
-  }
-
-  .weather-card h1{
-      font-size:60px;
-  }
-
-}
-
-.header > button{
-  height:50px;
-  padding:0 25px;
-  border:none;
-  border-radius:25px;
-  background:#4d74ff;
-  color:white;
-  cursor:pointer;
-  font-size:16px;
-}
