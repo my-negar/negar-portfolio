@@ -77,36 +77,26 @@ function App() {
 
   <div className="about-image">
   <div className="about-image-glow"></div>
-
+<br></br><br></br>
   <img
     src={`${import.meta.env.BASE_URL}about.jpg`}
     alt="Negar"
   />
 </div>
 
-    <div className="about-content">
-      <p className="section-label">ABOUT ME</p>
+    <div className="about-content"><br></br>
+      <h3 className="section-label">ABOUT ME</h3>
 
-      <h2 className="h2">Who I Am</h2>
+      <h2 className="h2">Who I Am</h2><br></br>
 
-      <p>هستم Front-End Developer من یک </p>
-      <p> به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم</p>
-
-      <p>
-       پروژه‌های مختلفی ساخته‌ام  HTML, CSS, JavaScript, React در مسیر یادگیری  با
-       </p> 
-
-        <p>
-      و همیشه در حال یادگیری
-        تکنولوژی‌های جدید و بهتر کردن مهارت‌هایم هستم.
+      <p> من یک Front-end Developer هستم.<br></br>
+       به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم،<br></br>
+        در مسیر یادگیری پروژه‌های مختلفی با HTML, CSS, JavaScript, React 
+        ساخته‌ام و همیشه درحال یادگیری تکنولوژی‌های جدید و بهتر کردن مهارت‌هایم هستم.  <br></br>
+        هدف من این است که با ساخت پروژه‌های واقعی، تجربه بیشتری به دست بیاورم و مسیر حرفه ای خودم را در حوزه Front-End ادامه بدهم.
       </p>
+      
 
-      <p>
-        هدف من این است که با ساخت پروژه‌های واقعی، تجربه
-        بیشتری به دست بیاورم و
-        </p> 
-
-        <p>ادامه بدهم Front-End مسیر حرفه ای خودم را در حوزه</p>
 
       <a href="#contact" className="primary-button">
         Let's Talk
@@ -197,11 +187,11 @@ function App() {
         {/*  PROJECTS  */}
         <section className="projects" id="projects">
           <div className="section-heading">
-            <p className="section-label">MY WORK</p>
+            <h3 className="section-label">MY WORK</h3>
 
             <h2 className="h2">Featured Projects</h2>
 
-            <p> ساخته‌ام Front-End مجموعه ای از پروژه‌هایی که برای تمرین و تقویت مهارت‌های </p>
+            <h6 className="h5">  مجموعه ای از پروژه‌هایی که برای تمرین و تقویت مهارت‌هایم در این مسیر ساخته‌ام </h6>
           </div>
 
 
@@ -216,15 +206,15 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   React • CSS
-                </p>
+                </h4>
 
                 <h3>React Personal Website</h3>
 
                 <p>
                   یک وب‌سایت شخصی ساخته شده با React برای تمرین
-                  component-based development.
+                  .component-based development
                 </p>
 
                 <div className="project-links">
@@ -250,15 +240,15 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   React • API • CSS
-                </p>
+                </h4>
 
                 <h3>Weather Dashboard</h3>
 
                 <p>
                   داشبورد آب‌وهوا با قابلیت جستجوی شهر، نمایش
-                  پیش‌بینی و تغییر واحد دما
+                  پیش‌بینی و تغییر واحد دما.
                 </p>
 
                 <div className="project-links">
@@ -287,15 +277,15 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   HTML • CSS • JavaScript
-                </p>
+                </h4>
 
                 <h3>Todo List</h3>
 
                 <p>
                   اپلیکیشن مدیریت کارها برای اضافه کردن و مدیریت
-                 JavaScript وظایف روزانه با
+                   وظایف روزانه با JavaScript.
                 </p>
 
                 <div className="project-links">
@@ -324,17 +314,14 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   HTML • CSS • JavaScript
-                </p>
+                </h4>
 
                 <h3>Quiz App</h3>
 
                 <p>
-                 Quiz of king  این پروژه‌ مشابه اپلیکیشن پرسش و پاسخ 
-                </p>
-                <p>
-                  برای مدیریت سوال استفاده شده JavaScript هست و از 
+                  این پروژه‌ مشابه اپلیکیشن پرسش و پاسخ Quiz of king هست و از JavaScript برای مدیریت سوال استفاده شده.
                 </p>
 
                 <div className="project-links">
@@ -363,15 +350,15 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   HTML • CSS • JavaScript
-                </p>
+                </h4>
 
                 <h3>Calculator</h3>
 
                 <p>
-                برای JavaScript ماشین حساب تعاملی ساخته شده با 
-                 تمرین منطق برنامه‌نویسی
+                  ماشین حساب تعاملی ساخته شده با JavaScript برای  
+                 تمرین منطق برنامه‌نویسی.
                 </p>
 
                 <div className="project-links">
@@ -400,15 +387,15 @@ function App() {
               </div>
 
               <div className="project-content">
-                <p className="project-tech">
+                <h4 className="project-tech">
                   HTML • CSS
-                </p>
+                </h4>
 
                 <h3>Login Page</h3>
 
                 <p>
                   یک صفحه ورود ساده و ریسپانسیو با تمرکز روی
-                  طراحی تمیز و تجربه کاربری
+                  طراحی تمیز و تجربه کاربری.
                 </p>
 
                 <div className="project-links">
@@ -437,7 +424,7 @@ function App() {
         {/*  RESUME  */}
         <section className="resume" id="resume">
           <div className="section-heading">
-            <p className="section-label">MY RESUME</p>
+            <h4 className="section-label">MY RESUME</h4>
             <h2 className="h2">My Journey</h2>
           </div>
 
@@ -450,8 +437,7 @@ function App() {
                 <h3>Front-End Development</h3>
 
                 <p>
-                  HTML، CSS، JavaScript و React  ساخت و یادگیری 
-                  پروژه‌های مختلف برای تقویت مهارت‌های فرانت‌اند
+                       ساخت و یادگیری پروژه‌های مختلف با استفاده از HTML, CSS, JavaScript, React برای تقویت مهارت‌های فرانت‌اند
                 </p>
               </div>
             </div>
@@ -463,7 +449,7 @@ function App() {
               <div>
                 <h3>Hands-on Projects</h3>
 
-                <p> :ساخت پروژه‌هایی مانند </p><p> Weather Dashboard،Todo List، Quiz، Calculator و Login Page, Dark/light mood.
+                <p> ساخت پروژه‌هایی مانند: Weather Dashboard،Todo List، Quiz، Calculator و Login Page, Dark/light mood
                 </p>
               </div>
             </div>
@@ -476,9 +462,9 @@ function App() {
                 <h3>Continuous Learning</h3>
 
                 <p>
-                 Front-End ادامه یادگیری و توسعه مهارت‌ها برای ورود به
-                  بازار کار 
-                </p>
+                به‌صورت مستمر در حال تقویت مهارت‌هایم در JavaScript، React، TypeScript و توسعه مدرن Front-End هستم.
+
+                   </p>
               </div>
             </div>
 
@@ -504,7 +490,7 @@ function App() {
 
             <p>
               برای فرصت‌های کاری، کارآموزی یا همکاری می‌توانید
-              از طریق راه‌های ارتباطی زیر با من در تماس باشید
+             از طریق راه‌های ارتباطی زیر با من در تماس باشید
             </p>
           </div>
 
