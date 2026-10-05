@@ -87,7 +87,7 @@ function App() {
     <div className="about-content">
       <p className="section-label">ABOUT ME</p>
 
-      <h2>Who I Am</h2>
+      <h2 className="h2">Who I Am</h2>
 
       <p>هستم Front-End Developer من یک </p>
       <p> به طراحی و توسعه رابط های کاربری مدرن و کاربرپسند علاقه دارم</p>
@@ -125,7 +125,7 @@ function App() {
 
             <p>
               تکنولوژی‌هایی که در مسیر یادگیری و ساخت پروژه‌ها
-              با آن‌ها کار کرده‌ام.
+              با آن‌ها کار کرده‌ام
             </p>
           </div>
 
@@ -199,13 +199,49 @@ function App() {
           <div className="section-heading">
             <p className="section-label">MY WORK</p>
 
-            <h2>Featured Projects</h2>
+            <h2 className="h2">Featured Projects</h2>
 
             <p> ساخته‌ام Front-End مجموعه ای از پروژه‌هایی که برای تمرین و تقویت مهارت‌های </p>
           </div>
 
 
           <div className="projects-container">
+
+
+
+            {/* React Website */}
+            <article className="project-card">
+              <div className="project-preview">
+                <span>React</span>
+              </div>
+
+              <div className="project-content">
+                <p className="project-tech">
+                  React • CSS
+                </p>
+
+                <h3>React Personal Website</h3>
+
+                <p>
+                  یک وب‌سایت شخصی ساخته شده با React برای تمرین
+                  component-based development.
+                </p>
+
+                <div className="project-links">
+                  <a href="#" className="project-live">
+                    Live Demo
+                  </a>
+
+                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/portfolio-site"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="project-github">
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+
 
             {/* Weather */}
             <article className="project-card">
@@ -222,7 +258,7 @@ function App() {
 
                 <p>
                   داشبورد آب‌وهوا با قابلیت جستجوی شهر، نمایش
-                  پیش‌بینی و تغییر واحد دما.
+                  پیش‌بینی و تغییر واحد دما
                 </p>
 
                 <div className="project-links">
@@ -259,7 +295,7 @@ function App() {
 
                 <p>
                   اپلیکیشن مدیریت کارها برای اضافه کردن و مدیریت
-                  وظایف روزانه با JavaScript.
+                 JavaScript وظایف روزانه با
                 </p>
 
                 <div className="project-links">
@@ -295,8 +331,10 @@ function App() {
                 <h3>Quiz App</h3>
 
                 <p>
-                  اپلیکیشن آزمون تعاملی برای تمرین JavaScript،
-                  مدیریت داده‌ها و رویدادهای کاربر.
+                 Quiz of king  این پروژه‌ مشابه اپلیکیشن پرسش و پاسخ 
+                </p>
+                <p>
+                  برای مدیریت سوال استفاده شده JavaScript هست و از 
                 </p>
 
                 <div className="project-links">
@@ -332,8 +370,8 @@ function App() {
                 <h3>Calculator</h3>
 
                 <p>
-                  ماشین حساب تعاملی ساخته شده با JavaScript
-                  برای تمرین منطق برنامه‌نویسی.
+                برای JavaScript ماشین حساب تعاملی ساخته شده با 
+                 تمرین منطق برنامه‌نویسی
                 </p>
 
                 <div className="project-links">
@@ -370,7 +408,7 @@ function App() {
 
                 <p>
                   یک صفحه ورود ساده و ریسپانسیو با تمرکز روی
-                  طراحی تمیز و تجربه کاربری.
+                  طراحی تمیز و تجربه کاربری
                 </p>
 
                 <div className="project-links">
@@ -392,39 +430,6 @@ function App() {
             </article>
 
 
-            {/* React Website */}
-            <article className="project-card">
-              <div className="project-preview">
-                <span>React</span>
-              </div>
-
-              <div className="project-content">
-                <p className="project-tech">
-                  React • CSS
-                </p>
-
-                <h3>React Personal Website</h3>
-
-                <p>
-                  یک وب‌سایت شخصی ساخته شده با React برای تمرین
-                  component-based development.
-                </p>
-
-                <div className="project-links">
-                  <a href="#" className="project-live">
-                    Live Demo
-                  </a>
-
-                  <a href="https://github.com/my-negar/negar-portfolio/tree/main/portfolio-site"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="project-github">
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            </article>
-
           </div>
         </section>
 
@@ -433,7 +438,7 @@ function App() {
         <section className="resume" id="resume">
           <div className="section-heading">
             <p className="section-label">MY RESUME</p>
-            <h2>My Journey</h2>
+            <h2 className="h2">My Journey</h2>
           </div>
 
           <div className="resume-container">
@@ -445,8 +450,8 @@ function App() {
                 <h3>Front-End Development</h3>
 
                 <p>
-                  یادگیری HTML، CSS، JavaScript و React و ساخت
-                  پروژه‌های مختلف برای تقویت مهارت‌های فرانت‌اند.
+                  HTML، CSS، JavaScript و React  ساخت و یادگیری 
+                  پروژه‌های مختلف برای تقویت مهارت‌های فرانت‌اند
                 </p>
               </div>
             </div>
@@ -458,9 +463,7 @@ function App() {
               <div>
                 <h3>Hands-on Projects</h3>
 
-                <p>
-                  ساخت پروژه‌هایی مانند Weather Dashboard،
-                  Todo List، Quiz، Calculator و Login Page, Dark/light mood.
+                <p> :ساخت پروژه‌هایی مانند </p><p> Weather Dashboard،Todo List، Quiz، Calculator و Login Page, Dark/light mood.
                 </p>
               </div>
             </div>
@@ -473,8 +476,8 @@ function App() {
                 <h3>Continuous Learning</h3>
 
                 <p>
-                  ادامه یادگیری و توسعه مهارت‌ها برای ورود به
-                  بازار کار Front-End.
+                 Front-End ادامه یادگیری و توسعه مهارت‌ها برای ورود به
+                  بازار کار 
                 </p>
               </div>
             </div>
@@ -497,11 +500,11 @@ function App() {
           <div className="section-heading">
             <p className="section-label">GET IN TOUCH</p>
 
-            <h2>Let's Connect</h2>
+            <h2 className="h2">Let's Connect</h2>
 
             <p>
               برای فرصت‌های کاری، کارآموزی یا همکاری می‌توانید
-              از طریق راه‌های ارتباطی زیر با من در تماس باشید.
+              از طریق راه‌های ارتباطی زیر با من در تماس باشید
             </p>
           </div>
 
