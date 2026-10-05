@@ -16,19 +16,19 @@
 body {
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  direction: rtl; /* قرار گرفتن سایدبار در سمت راست */
-  font-size: 13px; /* اندازه پایه کل صفحه */
+  line-height: 1.8;
+  direction: rtl; /* برای قرار گرفتن سایدبار در سمت راست */
 }
 
 .container {
-  max-width: 900px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 40px auto;
   background: white;
   display: grid;
-  grid-template-columns: 260px 1fr; /* عرض سایدبار کمی جمع‌وجورتر شد */
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 12px;
+  /* ستون اول (سایدبار سمت راست) ۳۰۰ پیکسل و بقیه فضای صفحه به بخش اصلی داده می‌شود */
+  grid-template-columns: 300px 1fr; 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -36,101 +36,83 @@ body {
 .sidebar {
   background: var(--primary);
   color: white;
-  padding: 25px 18px;
+  padding: 30px 20px;
   text-align: center;
 }
 
 .sidebar h1 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 4px;
+  font-size: 22px;
+  margin-bottom: 5px;
 }
 
 .sidebar h2 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 300;
-  margin-bottom: 20px;
-  color: #d1d5db;
+  margin-bottom: 25px;
+  color: #ddd;
 }
 
 .sidebar h3 {
-  margin: 16px 0 8px;
+  margin: 20px 0 10px;
   color: var(--secondary);
   text-align: right;
-  font-size: 13px;
-  font-weight: 600;
 }
 
 .sidebar p {
   text-align: right;
-  font-size: 12px;
-  word-break: break-word;
-  line-height: 1.6;
+  font-size: 14px;
+  word-break: break-word; /* جلوگیری از زدن لینک‌ها یا متن‌های طولانی به بیرون */
 }
 
 .skill {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   text-align: right;
-  font-size: 12px;
 }
 
 /* بخش اصلی (محتوای سمت چپ) */
 .main {
-  padding: 30px 25px;
+  padding: 40px 30px;
 }
 
 .section {
-  margin-bottom: 22px;
+  margin-bottom: 30px;
 }
 
 .section h3 {
   color: var(--primary);
-  font-size: 15px;
   margin-bottom: 10px;
-  border-right: 3px solid var(--secondary);
-  padding-right: 8px;
+  border-right: 4px solid var(--secondary);
+  padding-right: 10px;
 }
 
 .project {
   background: var(--bg);
-  padding: 12px 15px;
-  border-radius: 8px;
+  padding: 15px;
+  border-radius: 10px;
   margin-bottom: 10px;
-  transition: 0.2s ease-in-out;
-}
-
-.project h4 {
-  font-size: 13px;
-  margin-bottom: 4px;
-  color: #1f2937;
-}
-
-.project p {
-  font-size: 12px;
-  color: #4b5563;
-  line-height: 1.6;
+  transition: 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 a {
   color: var(--accent);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 11px;
+  font-weight: bold;
   display: inline-block;
-  margin-top: 6px;
+  margin-top: 5px;
   word-break: break-all;
 }
 
-/* تنظیمات موبایل و تبلت با فونت‌های ظریف‌تر */
+/* تنظیمات اختصاصی موبایل و تبلت (حفظ حالت دو ستونه) */
 @media (max-width: 768px) {
   .container {
     margin: 10px;
-    grid-template-columns: 32% 68%;
+    /* ستون‌ها به حالت درصدی تغییر می‌کنند تا در صفحه کوچک جا بشوند */
+    grid-template-columns: 35% 65%; 
     border-radius: 10px;
   }
 
@@ -139,53 +121,43 @@ a {
   }
 
   .sidebar h1 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .sidebar h2 {
-    font-size: 10px;
-    margin-bottom: 12px;
+    font-size: 11px;
   }
 
   .sidebar h3 {
-    font-size: 11px;
-    margin: 10px 0 4px;
+    font-size: 13px;
   }
 
   .sidebar p, .skill {
-    font-size: 10px;
-    line-height: 1.5;
-  }
-
-  .main {
-    padding: 15px 12px;
-  }
-
-  .section {
-    margin-bottom: 15px;
-  }
-
-  .section h3 {
-    font-size: 12px;
-    padding-right: 6px;
-    border-right-width: 2px;
-  }
-
-  .project {
-    padding: 8px 10px;
-    margin-bottom: 8px;
-  }
-
-  .project h4 {
     font-size: 11px;
   }
 
+  .main {
+    padding: 20px 15px;
+  }
+
+  .section h3 {
+    font-size: 15px;
+  }
+
+  .project {
+    padding: 10px;
+  }
+
+  .project h4 {
+    font-size: 13px;
+  }
+
   .project p {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   a {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
