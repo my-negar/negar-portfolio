@@ -1,4 +1,4 @@
-name: Deploy React to GitHub Pages
+name: Deploy Weather App to GitHub Pages
 
 on:
   push:
@@ -27,24 +27,15 @@ jobs:
         with:
           node-version: 20
           cache: npm
-          cache-dependency-path: portfolio-site/portfolio-site/package-lock.json
+          cache-dependency-path: weather/weather-app/package-lock.json
 
       - name: Install dependencies
-        working-directory: ./portfolio-site/portfolio-site
+        working-directory: ./weather/weather-app
         run: npm ci
 
-      - name: Build React Portfolio
-        working-directory: ./portfolio-site/portfolio-site
+      - name: Build Weather App
+        working-directory: ./weather/weather-app
         run: npm run build
-
-      - name: Copy projects
-        run: |
-          cp -r todolist portfolio-site/portfolio-site/dist/
-          cp -r calculator-new portfolio-site/portfolio-site/dist/
-          cp -r login portfolio-site/portfolio-site/dist/
-          cp -r Quizify portfolio-site/portfolio-site/dist/
-          cp -r moonlight portfolio-site/portfolio-site/dist/
-          cp -r resume portfolio-site/portfolio-site/dist/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -52,7 +43,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./portfolio-site/portfolio-site/dist
+          path: ./weather/weather-app/dist
 
   deploy:
     environment:
