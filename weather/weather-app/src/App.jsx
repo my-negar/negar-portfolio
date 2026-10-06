@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 function App() {
 
-    const API_KEY = "d597439c538631645419d45ea4b2fbb2";
+    const API_KEY = "96f20d8e2cdafa5f56086db18756187d";
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [city, setCity] = useState("Tehran");
