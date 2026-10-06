@@ -1,3 +1,4 @@
+```yaml
 name: Deploy React to GitHub Pages
 
 on:
@@ -29,13 +30,19 @@ jobs:
           cache: npm
           cache-dependency-path: portfolio-site/portfolio-site/package-lock.json
 
-      - name: Install dependencies
+      - name: Install Portfolio dependencies
         working-directory: ./portfolio-site/portfolio-site
         run: npm ci
 
       - name: Build React Portfolio
         working-directory: ./portfolio-site/portfolio-site
         run: npm run build
+
+      - name: Build Weather App
+        working-directory: ./weather/weather-app
+        run: |
+          npm ci
+          npm run build
 
       - name: Copy projects
         run: |
@@ -45,6 +52,7 @@ jobs:
           cp -r Quizify portfolio-site/portfolio-site/dist/
           cp -r moonlight portfolio-site/portfolio-site/dist/
           cp -r resume portfolio-site/portfolio-site/dist/
+          cp -r weather/weather-app/dist portfolio-site/portfolio-site/dist/weather
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -65,3 +73,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+```
