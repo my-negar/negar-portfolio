@@ -234,7 +234,7 @@ function App() {
                 </p>
 
                 <div className="project-links">
-                  <a href="https://meteo-lab.ir"
+                  <a href="https://my-negar.github.io/negar-portfolio/weather/?utm_source=chatgpt.com"
                     target="_blank"
                     rel="noreferrer"
                     className="project-live">
