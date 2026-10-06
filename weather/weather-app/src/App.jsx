@@ -1,18 +1,21 @@
 import { useState , useEffect } from "react";
-import "./index.css" ;
+import { createPortal } from "react-dom";
 
 function App() {
 
     const API_KEY = "d597439c538631645419d45ea4b2fbb2";
 
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [city, setCity] = useState("Tehran");
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [hourly, setHourly] = useState([]);
-
   const [unit, setUnit] = useState("C");
+  const toggleMenu = ()=>{
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
 useEffect(() =>{
   getWeather("Tehran");
 }, []);
@@ -123,63 +126,42 @@ console.log("search clicked" , search);
   };
 
   return (
-    <div className="container">
-          {/* Sidebar */}
-          <aside className="sidebar">
 
-          <div className="logo">
-            <h2>🌤 Weather</h2>
-          </div>
-  
-  
-          <nav>
-            <ul>
-              <li>🏠 Home</li>
-              <li>📅 Forecast</li>
-              <li>🗺 Map</li>
-              <li>🤍 Favorites</li>
-              <li>⚙ Settings</li>
-            </ul>
-          </nav>
-  
-  
-          <div className="location">
-  
-            <p>
-              📍 {city}
-            </p>
-  
-            <button onClick={useLocation}>
-              Use My Location
-            </button>
-  
-          </div>
-  
-        </aside>
-  
 
-        {/* Main */}
-        <main className="main">
-  
+    <div className="header">
+
+{createPortal(
+  <button className="hamburger-btn" onClick={toggleMenu}>
+    {isMenuOpen ? '✕' : '☰'}
+  </button>,
+  document.body
+)}
+
+  <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
+    <div className="logo">
+      <h2>Weather</h2>
+    </div>
+
+    <nav>
+      <ul>
+        <li><i>🏠</i> <span>Home</span></li>
+        <li><i>❤️</i> <span>Favorite</span></li>
+        <li><i>🌤️</i> <span>Forecast</span></li>
+        <li><i>⚙️</i> <span>Settings</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main className="main">
   
           {/* Header */}
           <header className="header">
     
-            <input
-  
-              type="text"
-  
-              placeholder="Search for city..."
-  
-              value={search}
-  
-              onChange={(e)=>setSearch(e.target.value)}
-  
-            />
-
-            <button onClick={searchCity}>
-              Search
-            </button>
+          
+          <div className="search-box">
+              <input type="text" placeholder="search..." />
+              <button className="btn-search">🔍</button>
+            </div>
     
             <div className="header-right">
   
