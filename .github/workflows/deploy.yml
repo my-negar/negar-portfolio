@@ -1,4 +1,4 @@
-name: Deploy Weather App to GitHub Pages
+name: Deploy Portfolio and Weather to GitHub Pages
 
 on:
   push:
@@ -25,11 +25,29 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
-          cache-dependency-path: weather/weather-app/package-lock.json
+          cache-dependency-path: |
+            portfolio-site/portfolio-site/package-lock.json
+            weather/weather-app/package-lock.json
 
-      - name: Install dependencies
+      # -------------------------
+      # Build Portfolio
+      # -------------------------
+
+      - name: Install Portfolio dependencies
+        working-directory: ./portfolio-site/portfolio-site
+        run: npm ci
+
+      - name: Build Portfolio
+        working-directory: ./portfolio-site/portfolio-site
+        run: npm run build
+
+      # -------------------------
+      # Build Weather App
+      # -------------------------
+
+      - name: Install Weather dependencies
         working-directory: ./weather/weather-app
         run: npm ci
 
@@ -37,13 +55,26 @@ jobs:
         working-directory: ./weather/weather-app
         run: npm run build
 
+      # -------------------------
+      # Put Weather inside Portfolio
+      # -------------------------
+
+      - name: Copy Weather into Portfolio
+        run: |
+          mkdir -p portfolio-site/portfolio-site/dist/weather
+          cp -r weather/weather-app/dist/* portfolio-site/portfolio-site/dist/weather/
+
+      # -------------------------
+      # GitHub Pages
+      # -------------------------
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./weather/weather-app/dist
+          path: ./portfolio-site/portfolio-site/dist
 
   deploy:
     environment:
