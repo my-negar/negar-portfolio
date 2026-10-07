@@ -1,36 +1,29 @@
-import { useState , useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState, useEffect } from "react";
 
 function App() {
 
-    const API_KEY = "96f20d8e2cdafa5f56086db18756187d";
+  const API_KEY = "96f20d8e2cdafa5f56086db18756187d";
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [city, setCity] = useState("Tehran");
   const [search, setSearch] = useState("");
   const [weather, setWeather] = useState(null);
   const [forecast, setForecast] = useState([]);
   const [hourly, setHourly] = useState([]);
   const [unit, setUnit] = useState("C");
-  const toggleMenu = ()=>{
-    setIsMenuOpen(!isMenuOpen);
-  };
-  
-useEffect(() =>{
-  getWeather("Tehran");
-}, []);
+
+  useEffect(() => {
+    getWeather("Tehran");
+  }, []);
 
   // تبدیل دما
   const temperature = (temp) => {
 
-    if(unit === "F"){
+    if (unit === "F") {
       return Math.round((temp * 9 / 5) + 32);
     }
 
     return Math.round(temp);
-
   };
-
 
 
   // گرفتن اطلاعات هوا
@@ -42,22 +35,17 @@ useEffect(() =>{
         `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${API_KEY}`
       );
 
-
       const weatherData = await weatherRes.json();
-
 
 
       const forecastRes = await fetch(
         `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&appid=${API_KEY}`
       );
 
-
       const forecastData = await forecastRes.json();
 
 
-
       setCity(weatherData.name);
-
 
 
       setWeather({
@@ -69,7 +57,7 @@ useEffect(() =>{
         condition: weatherData.weather[0].description,
 
         icon:
-        `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`,
+          `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`,
 
         humidity: weatherData.main.humidity,
 
@@ -78,42 +66,50 @@ useEffect(() =>{
         pressure: weatherData.main.pressure,
 
         visibility:
-        Math.round(weatherData.visibility / 1000)
+          Math.round(weatherData.visibility / 1000)
 
       });
 
 
-
       setForecast(
-        forecastData.list.filter((item,index)=>index % 8 === 0)
+        forecastData.list.filter((item, index) => index % 8 === 0)
       );
 
       setHourly(
-        forecastData.list.slice(0,6)
+        forecastData.list.slice(0, 6)
       );
-    }
-    catch(error){
 
-      console.log("ERROR:" , error);
+    }
+    catch (error) {
+
+      console.log("ERROR:", error);
+
     }
   };
+
 
   // سرچ شهر
   const searchCity = () => {
-console.log("search clicked" , search);
-    if(search.trim() !== ""){
+
+    console.log("search clicked", search);
+
+    if (search.trim() !== "") {
       getWeather(search);
     }
+
   };
+
+
   // موقعیت کاربر
   const useLocation = () => {
 
     navigator.geolocation.getCurrentPosition(
 
-      async(position)=>{
+      async (position) => {
 
         const lat = position.coords.latitude;
         const lon = position.coords.longitude;
+
         const res = await fetch(
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
         );
@@ -121,331 +117,381 @@ console.log("search clicked" , search);
         const data = await res.json();
 
         getWeather(data.name);
+
       }
     );
+
   };
+
 
   return (
 
+    <main className="main">
 
-    <div className="header">
+      {/* Header */}
 
-{createPortal(
-  <button className="hamburger-btn" onClick={toggleMenu}>
-    {isMenuOpen ? '✕' : '☰'}
-  </button>,
-  document.body
-)}
+      <header className="header">
 
-  <div className={`sidebar ${isMenuOpen ? 'open' : ''}`}>
-    <div className="logo">
-      <h2>Weather</h2>
-    </div>
+        <div className="search-box">
 
-    <nav>
-      <ul>
-        <li><i>🏠</i> <span>Home</span></li>
-        <li><i>❤️</i> <span>Favorite</span></li>
-        <li><i>🌤️</i> <span>Forecast</span></li>
-        <li><i>⚙️</i> <span>Settings</span></li>
-      </ul>
-    </nav>
-  </div>
+          <input
+            type="text"
+            placeholder="search..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                searchCity();
+              }
+            }}
+          />
 
-  <main className="main">
-  
-          {/* Header */}
-          <header className="header">
-    
-          
-          <div className="search-box">
-              <input type="text" placeholder="search..." />
-              <button className="btn-search">🔍</button>
-            </div>
-    
-            <div className="header-right">
-  
-  
-              <button
-                onClick={()=>setUnit("C")}
+          <button
+            className="btn-search"
+            onClick={searchCity}
+          >
+            🔍
+          </button>
+
+        </div>
+
+
+        <div className="header-right">
+
+          <button
+            onClick={() => setUnit("C")}
+          >
+            °C
+          </button>
+
+
+          <button
+            onClick={() => setUnit("F")}
+          >
+            °F
+          </button>
+
+
+          <div className="profile">
+            👤
+          </div>
+
+        </div>
+
+      </header>
+
+
+      {/* Top Section */}
+
+      <section className="top-section">
+
+        {/* Weather Card */}
+
+        <div className="weather-card">
+
+          <h2>
+            📍 {city}, Iran
+          </h2>
+
+
+          {weather ? (
+
+            <>
+
+              <img
+                src={weather.icon}
+                alt="weather"
+              />
+
+
+              <h1>
+                {temperature(weather.temp)}°{unit}
+              </h1>
+
+
+              <h3>
+                {weather.condition}
+              </h3>
+
+
+              <p>
+                Feels like {temperature(weather.feels)}°{unit}
+              </p>
+
+            </>
+
+          ) : (
+
+            <h2>
+              Search a city
+            </h2>
+
+          )}
+
+        </div>
+
+
+        {/* Details */}
+
+        <div className="details-grid">
+
+          <div className="detail-card">
+
+            <h4>
+              Humidity
+            </h4>
+
+            <p>
+              {weather ? weather.humidity : "--"}%
+            </p>
+
+          </div>
+
+
+          <div className="detail-card">
+
+            <h4>
+              Wind
+            </h4>
+
+            <p>
+              {weather ? weather.wind : "--"} km/h
+            </p>
+
+          </div>
+
+
+          <div className="detail-card">
+
+            <h4>
+              Pressure
+            </h4>
+
+            <p>
+              {weather ? weather.pressure : "--"} hPa
+            </p>
+
+          </div>
+
+
+          <div className="detail-card">
+
+            <h4>
+              Visibility
+            </h4>
+
+            <p>
+              {weather ? weather.visibility : "--"} km
+            </p>
+
+          </div>
+
+
+          <div className="detail-card">
+
+            <h4>
+              UV Index
+            </h4>
+
+            <p>
+              N/A
+            </p>
+
+          </div>
+
+
+          <div className="detail-card">
+
+            <h4>
+              Sunrise / Sunset
+            </h4>
+
+            <p>
+              --
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* Forecast */}
+
+      <section className="forecast">
+
+        {/* 5 Day Forecast */}
+
+        <div className="five-day">
+
+          <h2>
+            5-Day Forecast
+          </h2>
+
+
+          <div className="forecast-list">
+
+            {forecast.map((day, index) => (
+
+              <div
+                className="forecast-item"
+                key={index}
               >
-                °C
-              </button>
-  
-  
-  
-              <button
-                onClick={()=>setUnit("F")}
+
+                <h3>
+
+                  {
+                    new Date(day.dt_txt)
+                      .toLocaleDateString(
+                        "en-US",
+                        {
+                          weekday: "short"
+                        }
+                      )
+                  }
+
+                </h3>
+
+
+                <img
+                  src={
+                    `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`
+                  }
+                  alt="icon"
+                />
+
+
+                <p>
+                  {temperature(day.main.temp)}°{unit}
+                </p>
+
+
+                <span>
+                  {day.weather[0].description}
+                </span>
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+
+        {/* Hourly Forecast */}
+
+        <div className="hourly">
+
+          <h2>
+            Hourly Forecast
+          </h2>
+
+
+          <div className="hourly-list">
+
+            {hourly.map((hour, index) => (
+
+              <div
+                className="hour-item"
+                key={index}
               >
-                °F
-              </button>
-  
-              <div className="profile">
-                👤
+
+                <p>
+
+                  {
+                    new Date(hour.dt_txt)
+                      .getHours()
+                  }:00
+
+                </p>
+
+
+                <img
+                  src={
+                    `https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`
+                  }
+                  alt="weather"
+                />
+
+
+                <span>
+                  {temperature(hour.main.temp)}°
+                </span>
+
               </div>
-  
-  
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* Bottom Section */}
+
+      <section className="bottom-section">
+
+        <div className="favorite-cities">
+
+          <h2>
+            Favorite Cities
+          </h2>
+
+
+          <div className="cities">
+
+            <div className="city-card">
+              Tehran
             </div>
 
-          </header>  
 
-          {/* Top Section */}
-          <section className="top-section">
-  
-            {/* Weather Card */}
-            <div className="weather-card">  
-  
-              <h2>
-                📍 {city}, Iran
-              </h2>
-
-              {weather ? (
-                <>  
-                  <img
-                    src={weather.icon}
-                    alt="weather"
-                  />
-
-                  <h1>
-                    {temperature(weather.temp)}°{unit}
-                  </h1>
-    
-                  <h3>
-                    {weather.condition}
-                  </h3>
-
-                  <p>
-                    Feels like {temperature(weather.feels)}°{unit}
-                  </p>
-                </>
-              ) : (
-  
-                <h2>
-                  Search a city
-                </h2>
-  
-              )}
-    
+            <div className="city-card">
+              Istanbul
             </div>
-  
-            {/* Details */}
-            <div className="details-grid">
-  
-  
-              <div className="detail-card">
-  
-                <h4>
-                  Humidity
-                </h4>
-  
-                <p>
-                  {weather ? weather.humidity : "--"}%
-                </p>
-  
-              </div>
 
-              <div className="detail-card">
-  
-                <h4>
-                  Wind
-                </h4>
-  
-                <p>
-                  {weather ? weather.wind : "--"} km/h
-                </p>
-  
-              </div>
-  
-              <div className="detail-card">
-  
-                <h4>
-                  Pressure
-                </h4>
-  
-                <p>
-                  {weather ? weather.pressure : "--"} hPa
-                </p>
-  
-              </div>
-  
-              <div className="detail-card">
-  
-                <h4>
-                  Visibility
-                </h4>
-  
-                <p>
-                  {weather ? weather.visibility : "--"} km
-                </p>
-  
-              </div>
-  
-              <div className="detail-card">
-  
-                <h4>
-                  UV Index
-                </h4>
-                <p>
-                  N/A
-                </p>
-  
-              </div>
-              <div className="detail-card">
-  
-                <h4>
-                  Sunrise / Sunset
-                </h4>
-                <p>
-                  --
-                </p>
-  
-              </div>
-  
+
+            <div className="city-card">
+              Dubai
             </div>
-          </section>
-                  {/* Forecast */}
-
-        <section className="forecast">
-{/* 5 Day Forecast */}
-
-<div className="five-day">
-  <h2>
-    5-Day Forecast
-  </h2>
-
-  <div className="forecast-list">
-    {forecast.map((day, index)=>(
-      <div 
-        className="forecast-item"
-        key={index}
-      >
-        <h3>
-          {
-            new Date(day.dt_txt)
-            .toLocaleDateString("en-US",
-            {
-              weekday:"short"
-            })
-          }
-        </h3>
-
-        <img
-          src={
-            `https://openweathermap.org/img/wn/${day.weather[0].icon}.png`
-          }
-          alt="icon"
-        />
-
-        <p>
-          {temperature(day.main.temp)}°{unit}
-        </p>
-
-        <span>
-          {day.weather[0].description}
-        </span>
-
-      </div>
-    ))}
-
-  </div>
-
-</div>
-{/* Hourly Forecast */}
-
-<div className="hourly">
-  <h2>
-    Hourly Forecast
-  </h2>
-
-  <div className="hourly-list">
-
-    {hourly.map((hour,index)=>(
-      <div
-
-        className="hour-item"
-
-        key={index}
-
-      >
-        <p>
-          {
-            new Date(hour.dt_txt)
-            .getHours()
-          }:00
-        </p>
-
-        <img
-
-          src={
-            `https://openweathermap.org/img/wn/${hour.weather[0].icon}.png`
-          }
-          alt="weather"
-
-        />
-        <span>
-          {temperature(hour.main.temp)}°
-        </span>
-
-      </div>
-    ))}
-
-  </div>
-</div>
-</section>
-{/* Bottom Section */}
-<section className="bottom-section">
-
-<div className="favorite-cities">
-
-  <h2>
-    Favorite Cities
-  </h2>
-
-  <div className="cities">
-
-    <div className="city-card">
-      Tehran
-    </div>
-
-    <div className="city-card">
-      Istanbul
-    </div>
-
-    <div className="city-card">
-      Dubai
-    </div>
-
-    <div 
-      className="city-card"
-      onClick={()=>{
-        setSearch("");
-      }}
-    >
-      + Add City
-    </div>
-  </div>
-
-</div>
-<div className="weather-map">
 
 
-  <h2>
-    Weather Map
-  </h2>
+            <div
+              className="city-card"
+              onClick={() => {
+                setSearch("");
+              }}
+            >
+              + Add City
+            </div>
 
-  <div className="map">
+          </div>
 
-    🗺 Map Here
+        </div>
 
-  </div>
-</div>
 
-</section>
+        <div className="weather-map">
 
-</main>
+          <h2>
+            Weather Map
+          </h2>
 
-</div>
-);
+
+          <div className="map">
+            🗺 Map Here
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  );
+
 }
 
 export default App;

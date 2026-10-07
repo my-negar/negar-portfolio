@@ -1,4 +1,3 @@
-
 /* Google Font */
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
@@ -34,14 +33,14 @@ body {
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 15px 20px;
+  padding: 15px 30px;
   background-color: #f4f7fe;
   box-sizing: border-box;
   position: relative;
 }
 
 
-/* Main*/
+/* Main */
 
 .main,
 .main-content {
@@ -49,21 +48,21 @@ body {
 }
 
 
-/* Header*/
+/* Header */
 
-   .header {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin-top: 25px;
-    margin-bottom: 20px;
-    width: 100%;
-    padding-left: 70px;
-  }
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+  margin-bottom: 20px;
+  width: 100%;
+}
 
-/* Search Box*/
+
+/* Search Box */
 
 .search-box {
   display: flex;
@@ -71,6 +70,7 @@ body {
   position: relative;
   flex: 1;
   max-width: 450px;
+  margin-left: 19px;
 }
 
 .header input {
@@ -93,7 +93,7 @@ body {
 }
 
 
-/* Header Right*/
+/* Header Right */
 
 .header-right {
   display: flex;
@@ -128,117 +128,19 @@ body {
   align-items: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  margin-right: 10px;
 }
 
 
-/* HAMBURGER BUTTON */
+/* Top Section */
 
-.hamburger-btn {
-  position: fixed !important;
-  top: 15px !important;
-  left: 15px !important;
-  width: 42px !important;
-  height: 42px !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  margin: 0 !important;
-  padding: 0 !important;
-  border: none;
-  border-radius: 12px;
-  background: #4d74ff;
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 99999 !important;
-  transform: none !important;
-  transition: background 0.2s ease;
+.top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  width: calc(100% - 10px);
+  margin-left: 10px;
 }
-
-.hamburger-btn:hover {
-  background: #3b62ee;
-}
-
-
-/* SIDEBAR */
-
-.sidebar {
-  position: fixed !important;
-  top: 65px !important;
-  left: -260px !important;
-  width: 210px !important;
-  height: auto !important;
-  max-height: 80vh;
-  padding: 18px 15px !important;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  z-index: 99998 !important;
-  transition: left 0.3s ease-in-out;
-  transform: none !important;
-}
-
-.sidebar.open {
-  left: 20px !important;
-}
-
-
-/* Sidebar Logo*/
-
-.logo h2 {
-  color: #2d4de0;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-
-/* Sidebar List*/
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 12px !important;
-  margin-bottom: 8px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.2s;
-  color: #555;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.sidebar li span {
-  display: inline-block !important;
-}
-
-.sidebar li:hover {
-  background: #eef3ff;
-  color: #2d4de0;
-}
-
-.sidebar li:first-child {
-  background: #4d74ff;
-  color: #fff;
-}
-
-
-/* Top Section*/
-
-   .top-section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 20px;
-    width: calc(100% - 10px);
-    margin-left: 10px;
-  }
 
 
 /* Weather Card */
@@ -247,9 +149,9 @@ body {
   background: linear-gradient(135deg, #4d74ff, #77a8ff);
   color: #fff;
   border-radius: 25px;
-  padding: 20px 25px;
-  min-height: 200px;
-  margin-left: 10px;
+  padding: 25px 30px;
+  min-height: 230px;
+  margin-left: 5px;
   margin-right: 10px;
   display: flex;
   flex-direction: column;
@@ -268,33 +170,36 @@ body {
   margin-top: 10px;
 }
 
-/* Details Section*/
 
-   .details-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    width: 100%;
-  }
-  
-  .detail-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 22px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .detail-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-  }
+/* Details Section */
 
-/* Forecast Section*/
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.detail-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 9px;
+  margin-right: 9px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Forecast Section */
 
 .forecast {
   display: flex;
@@ -309,6 +214,8 @@ body {
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 9px;
+  margin-right: 9px;
 }
 
 .five-day h2,
@@ -349,7 +256,7 @@ body {
 }
 
 
-/*  Bottom Section*/
+/* Bottom Section */
 
 .bottom-section {
   display: grid;
@@ -364,6 +271,8 @@ body {
   border-radius: 20px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-left: 9px;
+  margin-right: 9px;
 }
 
 .favorite-cities h2,
@@ -374,7 +283,7 @@ body {
 }
 
 
-/* Cities*/
+/* Cities */
 
 .cities {
   display: grid;
@@ -397,7 +306,7 @@ body {
 }
 
 
-/*  Map */
+/* Map */
 
 .map {
   width: 100%;
@@ -413,21 +322,25 @@ body {
 }
 
 
-/* TABLET*/
+/* TABLET */
 
 @media (max-width: 992px) {
 
-  .header {
-    padding-left: 70px;
+  .container{
+    padding: 15px 15px;
   }
 
   .weather-card {
-    padding: 25px;
-    min-height: 280px;
+    padding: 28px;
+    min-height: 300px;
   }
 
   .weather-card h1 {
     font-size: 55px;
+  }
+
+  .search-box{
+    margin-left: 22px;
   }
 
   .temp-range {
@@ -445,6 +358,7 @@ body {
 
   .detail-card {
     padding: 15px;
+    margin-right: 10px;
   }
 
   .detail-card p {
@@ -456,6 +370,8 @@ body {
   .favorite-cities,
   .weather-map {
     padding: 20px;
+    margin-right: 9px;
+    margin-left: 9px;
   }
 
   .bottom-section {
@@ -478,41 +394,36 @@ body {
   .details > div {
     padding: 18px;
   }
-
-  .sidebar {
-    width: 160px !important;
-    padding: 15px 10px !important;
-  }
-
-  .logo h2 {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .sidebar li {
-    padding: 8px 10px !important;
-    font-size: 13px;
-    gap: 8px;
-  }
 }
 
 
-/* MOBILE*/
+/* MOBILE */
 
 @media (max-width: 670px) {
 
+  .container{
+    padding: 12px 12px;
+  }
+
   .header {
-    padding-left: 60px;
+    gap: 10px;
+  }
+
+  .search-box {
+    max-width: none;
+    margin-left: 19px;
   }
 
   .top-section {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 18px;
   }
 
   .weather-card {
-    padding: 20px;
-    min-height: auto;
+    padding: 23px;
+    min-height: 230;
+    margin-left: 4px;
+    margin-right: 12px;
   }
 
   .weather-card h1 {
@@ -524,13 +435,17 @@ body {
     gap: 20px;
   }
 
+  /* دو کارت کنار هم */
   .details-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
+    margin-top: 15px;
   }
 
   .detail-card {
     padding: 15px;
+    margin-right: 9px;
+    margin-left: 3px;
   }
 
   .detail-card p {
@@ -576,102 +491,27 @@ body {
     font-size: 16px;
   }
 
-  .details-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 15px;
-  }
-
-  .sidebar {
-    top: 60px !important;
-    left: -240px !important;
-
-    width: 200px !important;
-
-    max-height: 75vh;
-
-    padding: 20px 15px !important;
-
-    border-radius: 20px;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .sidebar.open {
-    left: 15px !important;
-  }
-
-  .logo h2 {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .sidebar li {
-    padding: 10px 12px !important;
-    font-size: 14px;
-  }
-
-  .sidebar li span {
-    display: inline-block !important;
-  }
-
   .location {
     display: none;
   }
+
+  .five-day{
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+
+  .hourly{
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+
+  .favorite-cities{
+    margin-right: 9px;
+    margin-left: 9px;
+  }
+
+  .weather-map{
+    margin-right: 9px;
+    margin-left: 9px;
+  }
 }
-
-
-/*HAMBURGER - ALL SCREEN SIZES*/
-
-   .hamburger-btn {
-    position: fixed !important;
-  
-    top: 15px !important;
-    left: 15px !important;
-  
-    width: 42px !important;
-    height: 42px !important;
-  
-    display: flex !important;
-  
-    align-items: center;
-    justify-content: center;
-  
-    padding: 0 !important;
-    margin: 0 !important;
-  
-    border: none;
-    border-radius: 12px;
-  
-    background: #4d74ff;
-    color: #fff;
-  
-    font-size: 20px;
-    line-height: 1;
-  
-    cursor: pointer;
-  
-    z-index: 99999 !important;
-  
-    transform: none !important;
-  }
-  
-  /* تبلت */
-  @media (max-width: 992px) {
-    .hamburger-btn {
-      display: flex !important;
-    }
-  }
-  
-  /* موبایل */
-  @media (max-width: 670px) {
-    .hamburger-btn {
-      display: flex !important;
-  
-      width: 40px !important;
-      height: 40px !important;
-  
-      top: 15px !important;
-      left: 15px !important;
-    }
-  }
