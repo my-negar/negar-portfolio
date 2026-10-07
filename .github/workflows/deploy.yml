@@ -65,6 +65,17 @@ jobs:
           cp -r weather/weather-app/dist/* portfolio-site/portfolio-site/dist/weather/
 
       # -------------------------
+      # Copy Static Projects
+      # -------------------------
+
+      - name: Copy Static Projects
+        run: |
+          cp -r todolist portfolio-site/portfolio-site/dist/todolist
+          cp -r calculator-new portfolio-site/portfolio-site/dist/calculator-new
+          cp -r login portfolio-site/portfolio-site/dist/login
+          cp -r Quizify portfolio-site/portfolio-site/dist/quizify
+
+      # -------------------------
       # GitHub Pages
       # -------------------------
 
