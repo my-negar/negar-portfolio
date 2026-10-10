@@ -1,10 +1,7 @@
 /* Google Font */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-
 /* Global */
-
 * {
   margin: 0;
   padding: 0;
@@ -14,42 +11,39 @@
 
 html,
 body {
+  width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  min-height: 100%;
 }
 
 body {
   background: #f4f7fc;
+  overflow-x: hidden;
 }
 
 #root {
+  width: 100%;
   min-height: 100vh;
 }
 
-
 /* Container */
-
 .container {
   width: 100%;
   min-height: 100vh;
-  padding: 15px 30px;
+  padding: 15px 24px;
   background-color: #f4f7fe;
-  box-sizing: border-box;
   position: relative;
 }
 
-
 /* Main */
-
 .main,
 .main-content {
   width: 100%;
+  min-width: 0;
 }
 
-
 /* Header */
-
 .header {
   position: relative;
   display: flex;
@@ -59,22 +53,24 @@ body {
   margin-top: 25px;
   margin-bottom: 20px;
   width: 100%;
+  min-width: 0;
 }
 
-
 /* Search Box */
-
 .search-box {
   display: flex;
   align-items: center;
   position: relative;
-  flex: 1;
+  flex: 1 1 450px;
+  min-width: 0;
   max-width: 450px;
   margin-left: 19px;
 }
 
 .header input {
+  display: block;
   width: 100%;
+  min-width: 0;
   height: 50px;
   border: none;
   border-radius: 30px;
@@ -92,9 +88,7 @@ body {
   cursor: pointer;
 }
 
-
 /* Header Right */
-
 .header-right {
   display: flex;
   align-items: center;
@@ -105,6 +99,7 @@ body {
 .header-right button {
   width: 45px;
   height: 45px;
+  flex-shrink: 0;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -121,6 +116,7 @@ body {
 .profile {
   width: 45px;
   height: 45px;
+  flex-shrink: 0;
   background: #fff;
   border-radius: 50%;
   display: flex;
@@ -131,65 +127,88 @@ body {
   margin-right: 10px;
 }
 
-
 /* Top Section */
-
 .top-section {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+  align-items: stretch;
   gap: 20px;
-  width: calc(100% - 10px);
-  margin-left: 10px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
 }
 
+.top-section > *,
+.details-grid > *,
+.bottom-section > *,
+.forecast > * {
+  min-width: 0;
+}
 
-/* Weather Card */
-
+/* Blue Weather Card */
 .weather-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 230px;
+  padding: 25px 28px;
+  margin: 0;
   background: linear-gradient(135deg, #4d74ff, #77a8ff);
   color: #fff;
   border-radius: 25px;
-  padding: 25px 30px;
-  min-height: 230px;
-  margin-left: 5px;
-  margin-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  overflow-wrap: anywhere;
 }
 
 .weather-card h1 {
-  font-size: 55px;
+  max-width: 100%;
+  font-size: clamp(34px, 3.5vw, 50px);
+  line-height: 1.15;
   margin: 10px 0;
-  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+.weather-card h2,
+.weather-card h3,
+.weather-card p,
+.weather-card span {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .temp-range {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
   margin-top: 10px;
+  min-width: 0;
 }
 
-
 /* Details Section */
-
 .details-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: stretch;
   gap: 15px;
   width: 100%;
+  min-width: 0;
 }
 
 .detail-card {
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 20px;
   background: #fff;
   border-radius: 20px;
-  padding: 22px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  margin-left: 9px;
-  margin-right: 9px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-wrap: anywhere;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -198,24 +217,30 @@ body {
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
+.detail-card p {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
 
 /* Forecast Section */
-
 .forecast {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  min-width: 0;
+  width: 100%;
   margin-top: 25px;
 }
 
 .five-day,
 .hourly {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 25px;
   background: #fff;
   border-radius: 20px;
-  padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  margin-left: 9px;
-  margin-right: 9px;
 }
 
 .five-day h2,
@@ -230,11 +255,12 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 15px;
+  min-width: 0;
 }
 
 .forecast-item,
 .hour-item {
-  flex: 1;
+  flex: 1 0 80px;
   min-width: 80px;
   text-align: center;
   padding: 18px 10px;
@@ -255,24 +281,26 @@ body {
   color: #fff;
 }
 
-
 /* Bottom Section */
-
 .bottom-section {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  align-items: stretch;
   gap: 20px;
+  width: 100%;
+  min-width: 0;
   margin-top: 25px;
 }
 
 .favorite-cities,
 .weather-map {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 25px;
   background: #fff;
   border-radius: 20px;
-  padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  margin-left: 9px;
-  margin-right: 9px;
 }
 
 .favorite-cities h2,
@@ -282,20 +310,20 @@ body {
   font-size: 18px;
 }
 
-
 /* Cities */
-
 .cities {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 15px;
 }
 
 .city-card {
+  min-width: 0;
   background: #f7f9ff;
   border-radius: 15px;
   padding: 18px 15px;
   text-align: center;
+  overflow-wrap: anywhere;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -305,11 +333,10 @@ body {
   transform: translateY(-5px);
 }
 
-
 /* Map */
-
 .map {
   width: 100%;
+  min-width: 0;
   height: 240px;
   border-radius: 18px;
   background: #dfe9ff;
@@ -321,35 +348,33 @@ body {
   font-weight: 600;
 }
 
-
-/* TABLET */
-
+/* TABLET & SMALL LAPTOP */
 @media (max-width: 992px) {
-
-  .container{
-    padding: 15px 15px;
-  }
-
-  .weather-card {
-    padding: 28px;
-    min-height: 300px;
-  }
-
-  .weather-card h1 {
-    font-size: 55px;
-  }
-
-  .search-box{
-    margin-left: 22px;
-  }
-
-  .temp-range {
-    gap: 15px;
-    font-size: 14px;
+  .container {
+    padding: 15px 20px;
   }
 
   .top-section {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     gap: 15px;
+  }
+
+  .weather-card {
+    min-height: 260px;
+    padding: 22px;
+  }
+
+  .weather-card h1 {
+    font-size: clamp(32px, 4vw, 42px);
+  }
+
+  .search-box {
+    margin-left: 10px;
+  }
+
+  .temp-range {
+    gap: 10px;
+    font-size: 14px;
   }
 
   .details-grid {
@@ -358,11 +383,10 @@ body {
 
   .detail-card {
     padding: 15px;
-    margin-right: 10px;
   }
 
   .detail-card p {
-    font-size: 18px;
+    font-size: 15px;
   }
 
   .five-day,
@@ -370,12 +394,10 @@ body {
   .favorite-cities,
   .weather-map {
     padding: 20px;
-    margin-right: 9px;
-    margin-left: 9px;
   }
 
   .bottom-section {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 15px;
   }
 
@@ -385,76 +407,101 @@ body {
     padding-bottom: 8px;
   }
 
-  .details {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
-
-  .detail-card,
-  .details > div {
-    padding: 18px;
+  .forecast-item,
+  .hour-item {
+    flex: 0 0 85px;
   }
 }
 
-
 /* MOBILE */
-
 @media (max-width: 670px) {
-
-  .container{
-    padding: 12px 12px;
+  .container {
+    padding: 12px 14px;
   }
 
   .header {
-    gap: 10px;
+    gap: 8px;
+    margin-top: 15px;
+    margin-bottom: 18px;
   }
 
   .search-box {
+    flex: 1 1 auto;
     max-width: none;
-    margin-left: 19px;
+    margin-left: 0;
+  }
+
+  .header input {
+    height: 46px;
+    padding-right: 42px;
+    padding-left: 15px;
+  }
+
+  .header-right {
+    gap: 7px;
+  }
+
+  .header-right button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .profile {
+    width: 40px;
+    height: 40px;
+    margin-right: 0;
   }
 
   .top-section {
-    grid-template-columns: 1fr;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
   }
 
   .weather-card {
-    padding: 23px;
-    min-height: 230;
-    margin-left: 4px;
-    margin-right: 12px;
+    width: 100%;
+    min-height: 225px;
+    padding: 22px;
+    margin: 0;
+    border-radius: 22px;
   }
 
   .weather-card h1 {
-    font-size: 48px;
-    margin: 15px 0;
+    font-size: clamp(34px, 9vw, 46px);
+    line-height: 1.15;
+    margin: 12px 0;
   }
 
   .temp-range {
-    gap: 20px;
+    gap: 10px 18px;
+    font-size: 14px;
   }
 
-  /* دو کارت کنار هم */
+  /* Two detail cards per row */
   .details-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    margin-top: 15px;
+    margin-top: 0;
   }
 
   .detail-card {
-    padding: 15px;
-    margin-right: 9px;
-    margin-left: 3px;
+    width: 100%;
+    padding: 14px;
+    margin: 0;
+    border-radius: 16px;
   }
 
   .detail-card p {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .forecast {
-    margin-top: 15px;
+    margin-top: 18px;
     gap: 15px;
+  }
+
+  .five-day,
+  .hourly {
+    padding: 16px;
   }
 
   .forecast-list,
@@ -462,22 +509,31 @@ body {
     overflow-x: auto;
     scroll-behavior: smooth;
     padding-bottom: 10px;
+    justify-content: flex-start;
   }
 
   .forecast-item,
   .hour-item {
-    padding: 12px 8px;
+    flex: 0 0 78px;
+    min-width: 78px;
+    padding: 12px 7px;
     font-size: 13px;
   }
 
   .bottom-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 18px;
+  }
+
+  .favorite-cities,
+  .weather-map {
+    padding: 18px;
+    margin: 0;
   }
 
   .cities {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
   }
 
@@ -494,24 +550,44 @@ body {
   .location {
     display: none;
   }
+}
 
-  .five-day{
-    margin-right: 9px;
-    margin-left: 9px;
+/* EXTRA SMALL PHONES */
+@media (max-width: 380px) {
+  .container {
+    padding: 10px;
   }
 
-  .hourly{
-    margin-right: 9px;
-    margin-left: 9px;
+  .weather-card {
+    padding: 18px;
   }
 
-  .favorite-cities{
-    margin-right: 9px;
-    margin-left: 9px;
+  .weather-card h1 {
+    font-size: 32px;
   }
 
-  .weather-map{
-    margin-right: 9px;
-    margin-left: 9px;
+  .detail-card {
+    padding: 11px;
+  }
+
+  .detail-card p {
+    font-size: 13px;
+  }
+
+  .header-right {
+    gap: 5px;
+  }
+
+  .header-right button,
+  .profile {
+    width: 36px;
+    height: 36px;
+  }
+
+  .five-day,
+  .hourly,
+  .favorite-cities,
+  .weather-map {
+    padding: 14px;
   }
 }
