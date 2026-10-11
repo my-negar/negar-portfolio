@@ -113,101 +113,26 @@ const [favoriteError, setFavoriteError] = useState("");
 
 
   // موقعیت کاربر
-  
   const useLocation = () => {
-    if (!navigator.geolocation) {
-      setWeatherError("Location is not supported by your browser.");
-      return;
-    }
 
     navigator.geolocation.getCurrentPosition(
+
       async (position) => {
-        try {
-          const { latitude, longitude } = position.coords;
 
-          const response = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
-          );
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
 
-          const data = await response.json();
-
-          if (!response.ok) {
-            throw new Error(data.message || "Could not find your location.");
-          }
-
-          getWeather(data.name);
-        } catch (error) {
-          setWeatherError(error.message || "Could not get your location.");
-        }
-      },
-      () => {
-        setWeatherError("Please allow location access in your browser.");
-      }
-    );
-  };
-
-  const addFavoriteCity = async (event) => {
-    event.preventDefault();
-
-    const cityName = newFavoriteCity.trim();
-
-    if (!cityName) {
-      setFavoriteError("Please enter a city name.");
-      return;
-    }
-
-    setFavoriteError("");
-
-    try {
-      const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(
-          cityName
-        )}&units=metric&appid=${API_KEY}`
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        console.error("Favorite City API Error:", response.status, data);
-      
-        setFavoriteError(
-          `API Error ${response.status}: ${
-            data.message || "Something went wrong."
-          }`
+        const res = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
         );
-      
-        return;
+
+        const data = await res.json();
+
+        getWeather(data.name);
+
       }
-
-      const validCityName = data.name;
-
-      const alreadyExists = favorites.some(
-        (favorite) =>
-          favorite.toLowerCase() === validCityName.toLowerCase()
-      );
-
-      if (alreadyExists) {
-        setFavoriteError("This city is already in your favorites.");
-        return;
-      }
-
-      saveFavorites([...favorites, validCityName]);
-      setNewFavoriteCity("");
-      setFavoriteError("");
-    } catch (error) {
-      console.error("Add favorite error:", error);
-      setFavoriteError(
-        "Could not connect. Please check your connection or VPN."
-      );
-    }
-  };
-
-  const removeFavoriteCity = (cityName) => {
-    const updatedFavorites = favorites.filter(
-      (favorite) => favorite !== cityName
     );
 
-    saveFavorites(updatedFavorites);
   };
 
 
@@ -523,56 +448,42 @@ const [favoriteError, setFavoriteError] = useState("");
 
       <section className="bottom-section">
 
-       
-<div className="favorite-cities">
-  <h2>Favorite Cities</h2>
+        <div className="favorite-cities">
 
-  <form className="add-city-form" onSubmit={addFavoriteCity}>
-    <input
-      type="text"
-      placeholder="Enter city name..."
-      value={newFavoriteCity}
-      onChange={(e) => setNewFavoriteCity(e.target.value)}
-    />
+          <h2>
+            Favorite Cities
+          </h2>
 
-    <button type="submit">+ Add City</button>
-  </form>
 
-  {favoriteError && (
-    <p className="favorite-error">{favoriteError}</p>
-  )}
+          <div className="cities">
 
-  <div className="cities">
-    {favorites.map((city) => (
-      <div
-        className="city-card"
-        key={city}
-        onClick={() => getWeather(city)}
-      >
-        <span>{city}</span>
+            <div className="city-card">
+              Tehran
+            </div>
 
-        <button
-          type="button"
-          className="remove-city"
-          aria-label={`Remove ${city}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            removeFavoriteCity(city);
-          }}
-        >
-          ×
-        </button>
-      </div>
-    ))}
 
-    {favorites.length === 0 && (
-      <p className="empty-favorites">
-        No favorite cities yet. Add your first city!
-      </p>
-    )}
-  </div>
-</div>
+            <div className="city-card">
+              Istanbul
+            </div>
 
+
+            <div className="city-card">
+              Dubai
+            </div>
+
+
+            <div
+              className="city-card"
+              onClick={() => {
+                setSearch("");
+              }}
+            >
+              + Add City
+            </div>
+
+          </div>
+
+        </div>
 
 
         <div className="weather-map">
