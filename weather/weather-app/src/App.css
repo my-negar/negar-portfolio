@@ -642,3 +642,99 @@ body {
     font-size: 36px;
   }
 }
+
+
+
+
+/* Favorite Cities - Functional UI */
+
+.add-city-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.add-city-form input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  background: #f7f9ff;
+  font-size: 13px;
+}
+
+.add-city-form input:focus {
+  border-color: #4d74ff;
+}
+
+.add-city-form button {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 10px;
+  padding: 0 12px;
+  background: #4d74ff;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.city-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.city-card span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.remove-city {
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 7px;
+  background: #e8edff;
+  color: #4d74ff;
+  font-size: 19px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.remove-city:hover {
+  background: #4d74ff;
+  color: white;
+}
+
+.favorite-error {
+  color: #dc2626;
+  font-size: 12px;
+  margin-bottom: 12px;
+  overflow-wrap: anywhere;
+}
+
+.empty-favorites {
+  grid-column: 1 / -1;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+@media (max-width: 380px) {
+  .add-city-form {
+    flex-wrap: wrap;
+  }
+
+  .add-city-form button {
+    min-height: 40px;
+  }
+}
